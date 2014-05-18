@@ -1,0 +1,22 @@
+{
+  "name": "chrome-app-rssly",
+  "version": "0.0.1",
+  "description": "yet another rss reader",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/FrankFang/chrome-app-rssly.git"
+  },
+  "keywords": [
+    "rss",
+    "chrome",
+    "app"
+  ],
+  "author": "Frank Fang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FrankFang/chrome-app-rssly/issues"
+  }
+}
