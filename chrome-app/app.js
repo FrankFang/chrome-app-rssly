@@ -1,6 +1,3 @@
-var angular = require('angular')
-
-
 angular.module('app', [])
     .controller('controller', ['$scope', function ($scope) {
         $scope.greetMe = 'World';
