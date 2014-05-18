@@ -28,6 +28,7 @@ gulp.task('copy', function () {
 gulp.task('browserify', function () {
     return gulp.src(APP + 'app.js')
         .pipe(browserify({
+            debug: true,
             shim: {
 //                'jquery-rss': {
 //                    path: 'node_modules/jquery-rss/src/jquery.rss.js',
@@ -63,7 +64,7 @@ gulp.task('html', function () {
 gulp.task('watch', function () {
     gulp.watch([TEST + '*'], ['html']);
     gulp.watch([APP + '**/*', '!' + APP + 'app.js'], ['copy'])
-    gulp.watch([APP + 'app.js'], ['browserify'])
+    gulp.watch([APP + '**/*.js'], ['browserify'])
     gulp.watch([APP + '**/*.less'], ['less'])
 });
 

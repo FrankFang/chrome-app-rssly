@@ -16,8 +16,10 @@
     "offline_enabled": true,
     "permissions": [
         "storage",
-        "http://localhost:8080/",
-        "http://ajax.googleapis.com/",
-        "https://ajax.googleapis.com/"
-    ]
+        "http://*/",
+        "https://*/"
+    ],
+    "sandbox": {
+        "pages": ["sandbox.html"]
+    }
 }

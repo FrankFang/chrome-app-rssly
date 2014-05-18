@@ -16,10 +16,29 @@ exports.get = function (source, cb) {
     xhr.send(null)
 }
 
-exports.render = function (feed) {
-    var template = document.querySelector('#channel').content
+exports.renderBlog = function (feed) {
+    var template = document.importNode(document.querySelector('#channel').content)
     template.querySelector('h1').innerText = feed.title
     template.querySelector('h2').innerText = feed.description
-    template.querySelector('a').href = feed.link
+    template.querySelector('h1').setAttribute('data-link', feed.link)
     return template
+}
+
+exports.renderEntries = function (feed) {
+    var result = []
+    var entries = feed.entries
+    entries.forEach(function (entry, index) {
+        var template = document.importNode(document.querySelector('#entry').content)
+        template.querySelector('h1').innerText = entry.title
+        template.querySelector('.link').href = entry.link
+        template.querySelector('time').innerText = entry.publishedDate
+        template.querySelector('article').innerHTML = entry.content
+        template.querySelector('.author').innerText = entry.author
+        template.querySelector('aside').innerText = entry.categories.toString()
+        result.push(template)
+
+    })
+
+    return result
+
 }
