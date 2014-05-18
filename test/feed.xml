@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[my feed]]></title>
+        <description><![CDATA[des]]></description>
+        <link>http://site.com</link>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Sun, 18 May 2014 05:41:04 GMT</lastBuildDate>
+        <atom:link href="http://1.xml" rel="self" type="application/rss+xml"/>
+        <author><![CDATA[frankfang]]></author>
+        <item>
+            <title><![CDATA[1]]></title>
+            <description><![CDATA[sakdjdak <a href=//google.com>hi</a>]]></description>
+            <link>http://frankfang.com</link>
+            <guid isPermaLink="false">41419040912312</guid>
+            <dc:creator><![CDATA[frankfang]]></dc:creator>
+            <pubDate>Sun, 18 May 2014 05:05:03 GMT</pubDate>
+        </item>
+    </channel>
+</rss>

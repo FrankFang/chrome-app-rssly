@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "yet another rss reader",
   "scripts": {
-    "test": "node test.js"
+    "test": "node test/index.js"
   },
   "repository": {
     "type": "git",
