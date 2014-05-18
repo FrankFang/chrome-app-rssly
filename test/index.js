@@ -2,7 +2,7 @@ var RSS = require('rss')
 var fs = require('fs')
 var path = require('path')
 
-var feed = new RSS({
+var feeds = new RSS({
     title: 'my feed',
     description: 'des',
     feed_url: 'http://1.xml',
@@ -10,7 +10,7 @@ var feed = new RSS({
     author: 'frankfang'
 })
 
-feed.item({
+feeds.item({
     title: '1',
     description: 'sakdjdak <a href=//google.com>hi</a>',
     url: 'http://frankfang.com',
@@ -18,11 +18,11 @@ feed.item({
     date: 'Sun May 18 2014 13:05:03 GMT+0800 (CST)'
 })
 
-var xml = feed.xml('    ')
+var xml = feeds.xml('    ')
 
 
-fs.writeFile(path.join(__dirname , '/feed.xml'), xml, function(){
-    console.log('feed.xml created')
+fs.writeFile(path.join(__dirname , '/feeds.xml'), xml, function(){
+    console.log('feeds.xml created')
     process.exit(0)
 })
 
