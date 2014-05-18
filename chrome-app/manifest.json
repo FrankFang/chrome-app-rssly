@@ -1,20 +1,22 @@
 {
-    "name":"Rssly",
-    "version":"0.0.1",
-    "manifest_version":2,
-    "minimum_chrome_version":"23",
-    "description":"yet another rss reader",
-    "icons":{
-        "16":"assets/icon.png",
-        "128":"assets/icon.png"
+    "name": "Rssly",
+    "version": "0.0.1",
+    "manifest_version": 2,
+    "minimum_chrome_version": "23",
+    "description": "yet another rss reader",
+    "icons": {
+        "16": "assets/icon.png",
+        "128": "assets/icon.png"
     },
-    "app":{
-        "background":{
-            "scripts":["main.js"]
+    "app": {
+        "background": {
+            "scripts": ["main.js"]
         }
     },
-    "offline_enabled":true,
-    "permissions":[
-        "storage"
+    "offline_enabled": true,
+    "permissions": [
+        "storage",
+        "http://localhost:8080/",
+        "http://ajax.googleapis.com/"
     ]
 }

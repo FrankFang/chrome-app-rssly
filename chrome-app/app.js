@@ -1,9 +1,15 @@
-document.body.style.background = 'red'
+var $ = require('jquery')
 
-var xhr = new XMLHttpRequest()
-xhr.onreadystatechange = function (a, b, c) {
-    console.log('onready')
-    console.log("a,b,c:")
-    console.log(a, b, c)
-}
-xhr.open('GET', 'http://localhost:8080/feeds.xml')
+$(document.body).text('hi')
+
+
+//var xhr = new XMLHttpRequest()
+//xhr.onreadystatechange = function () {
+//
+//    if (xhr.status === 200 && xhr.readyState === 4) {
+//        var xml = xhr.responseXML
+//    }
+//}
+//
+//xhr.open('GET', 'http://localhost:8080/feeds.xml')
+//xhr.send(null)

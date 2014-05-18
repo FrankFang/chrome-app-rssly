@@ -21,6 +21,13 @@
   },
   "devDependencies": {
     "gulp": "~3.6.2",
-    "gulp-connect": "~2.0.5"
+    "gulp-connect": "~2.0.5",
+    "gulp-browserify": "~0.5.0",
+    "gulp-newer": "~0.3.0",
+    "gulp-clean": "~0.2.4",
+    "browserify": "~4.1.5"
+  },
+  "dependencies": {
+    "jquery": "~2.1.1"
   }
 }
