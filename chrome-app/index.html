@@ -1,25 +1,26 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="app">
+<html lang="en" data-ng-app="rssly">
     <head>
         <meta charset="UTF-8">
         <title></title>
         <link rel="stylesheet" href="style.css"/>
     </head>
-    <body ng-controller="controller">
+    <body>
         <div class="page">
-            <section class="channelList">
+            <section class="channelList" ng-controller="ctrlChannels">
                 <ol>
-                    <li>{{this.greetMe}}</li>
-                    <li>2</li>
+                    <li ng-repeat="item in list">
+                        {{item.url}}
+                    </li>
                 </ol>
                 <footer>
                     <button>refresh</button>
                     <div class="relative">
-                        <button name="addChannel">add</button>
-                        <div style="width: 11rem;">
-                            <input type="text" placeholder="RSS Source"/>
-                            <button>OK</button>
-                        </div>
+                        <button name="addChannel" ng-click="toggle()">add</button>
+                        <form ng-hide="hide" ng-submit="hi()" ng-class="" style="width: 11rem;">
+                            <input type="text" placeholder="RSS Source" ng-model="newItem"/>
+                            <button type="submit">OK</button>
+                        </form>
                     </div>
                 </footer>
             </section>
@@ -47,7 +48,7 @@
         </template>
 
         <script src="vendors/angular.min.js"></script>
-        <script src=app.js></script>
+        <script src=main.js></script>
 
     </body>
 </html>

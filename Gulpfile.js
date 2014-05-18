@@ -20,13 +20,13 @@ gulp.task('copy', function () {
     return gulp
         .src([
                 APP + '**/*',
-                '!' + APP + 'app.js'
+                '!' + APP + 'main.js'
         ])
         .pipe(gulp.dest(DIST))
 })
 
 gulp.task('browserify', function () {
-    return gulp.src(APP + 'app.js')
+    return gulp.src(APP + 'main.js')
         .pipe(browserify({
             debug: true,
             shim: {
@@ -60,7 +60,7 @@ gulp.task('html', function () {
 
 gulp.task('watch', function () {
     gulp.watch([TEST + '*'], ['html']);
-    gulp.watch([APP + '**/*', '!' + APP + 'app.js'], ['copy'])
+    gulp.watch([APP + '**/*', '!' + APP + 'main.js'], ['copy'])
     gulp.watch([APP + '**/*.js'], ['browserify'])
     gulp.watch([APP + '**/*.less'], ['less'])
 });

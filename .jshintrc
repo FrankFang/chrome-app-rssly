@@ -29,6 +29,7 @@
     "undef": true,
     "unused": "vars",
     "globals": {
-        "chrome": true
+        "chrome": true,
+        "angular": true
     }
 }
