@@ -1,2 +1,2 @@
-:wq
+document.body.style.background = 'red'
 

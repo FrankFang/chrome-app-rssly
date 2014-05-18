@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "yet another rss reader",
   "scripts": {
-    "test": "node test/index.js"
+    "debug": "node test/index.js; gulp debug"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,9 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/FrankFang/chrome-app-rssly/issues"
+  },
+  "devDependencies": {
+    "gulp": "~3.6.2",
+    "gulp-connect": "~2.0.5"
   }
 }
