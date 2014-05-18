@@ -1,13 +1,17 @@
-var $ = require('jquery')
+//var $ = require('jquery')
+
+var html = require('html.js')
+var channel = require('./vendors/channel')
+console.log("channel:")
+console.log(channel)
+
+var source = 'http://www.ruanyifeng.com/blog/atom.xml'
+channel.get(source, function (error, feed) {
+    var item = channel.render(feed)
+    html.body.add(item)
+})
 
 
-var xhr = new XMLHttpRequest()
-xhr.onreadystatechange = function () {
-    if (xhr.status === 200 && xhr.readyState === 4) {
-        var xml = xhr.responseText
-        console.log(xml)
-    }
-}
+var pre = document.querySelector('pre')
 
-xhr.open('GET', 'https://ajax.googleapis.com/ajax/services/feed/load?v=2.0&q=http://phys.org/rss-feed/&num=20')
-xhr.send(null)
+

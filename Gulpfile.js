@@ -14,10 +14,14 @@ gulp.task('clean', function () {
         .pipe(clean());
 });
 
-gulp.task('debug', ['clean', 'connect', 'copy', 'browserify', 'watch'])
+gulp.task('debug', ['clean', 'connect', 'copy', 'less', 'browserify', 'watch'])
 
 gulp.task('copy', function () {
-    return gulp.src([APP + '**/*', '!' + APP + 'app.js'])
+    return gulp
+        .src([
+                APP + '**/*',
+                '!' + APP + 'app.js'
+        ])
         .pipe(gulp.dest(DIST))
 })
 
@@ -44,6 +48,13 @@ gulp.task('connect', function () {
     });
 });
 
+var less = require('gulp-less')
+gulp.task('less', function () {
+    return gulp.src(APP + '**/*.less')
+        .pipe(less())
+        .pipe(gulp.dest(DIST))
+});
+
 gulp.task('html', function () {
     gulp.src(TEST + '*')
         .pipe(connect.reload());
@@ -51,12 +62,13 @@ gulp.task('html', function () {
 
 gulp.task('watch', function () {
     gulp.watch([TEST + '*'], ['html']);
-    gulp.watch([APP + '**/*', '!' + APP + 'app.js'], ['copyNewer'])
+    gulp.watch([APP + '**/*', '!' + APP + 'app.js'], ['copy'])
     gulp.watch([APP + 'app.js'], ['browserify'])
+    gulp.watch([APP + '**/*.less'], ['less'])
 });
 
-gulp.task('copyNewer', function () {
-    gulp.src([APP + '**/*', '!' + APP + 'app'])
-        .pipe(newer([APP + '**/*', '!' + APP + 'app']))
-        .pipe(gulp.dest(DIST))
-})
+//gulp.task('copyNewer', function () {
+//    gulp.src([APP + '**/*', '!' + APP + 'app'])
+//        .pipe(newer([APP + '**/*', '!' + APP + 'app']))
+//        .pipe(gulp.dest(DIST))
+//})
