@@ -1,5 +1,32 @@
-body { -webkit-user-select: text }
+@line-height: 1.5;
+* { box-sizing: border-box; }
+html, body, ol, ul, dl { margin: 0; padding: 0; }
+ol, ul, dl { list-style: none; }
+html { font-size: 16px; line-height: @line-height; }
+body { -webkit-user-select: text; }
 
 html, body { height: 100%; }
-body { overflow-y: auto; margin: 0; padding: 0; }
+body { overflow-y: hidden; }
+
+.relative{ position: relative;}
+
+.page { height: 100%; overflow: hidden; }
+
+.page { display: flex;
+    > section { position: relative; display: flex; flex-direction: column; overflow-y: auto;
+        overflow-x: hidden;
+        border-right: 1px solid darken(white, 10%);
+    }
+}
+
+.channelList { width: 15rem;
+    > ol { flex: 1; }
+    > footer { height: 2rem; display: inline-flex;
+        button[name=addChannel] { position: relative;
+            & + div { position: absolute; bottom: 100%; }
+        }
+    }
+}
+.entryList { width: 15rem; overflow-y: auto }
+.preview { flex: 1; overflow-y: auto }
 

@@ -1,7 +1,16 @@
-var $ = require('jquery')
+var angular = require('angular')
+
+
+angular.module('app', [])
+    .controller('controller', ['$scope', function ($scope) {
+        $scope.greetMe = 'World';
+    }]);
+
+
+//var $ = require('jquery')
 var channel = require('./vendors/channel')
 
-var source = 'http://www.ruanyifeng.com/blog/atom.xml'
+//var source = 'http://www.ruanyifeng.com/blog/atom.xml'
 
 
 function onGetFeed(error, feed) {

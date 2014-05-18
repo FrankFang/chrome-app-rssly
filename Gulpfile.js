@@ -30,13 +30,10 @@ gulp.task('browserify', function () {
         .pipe(browserify({
             debug: true,
             shim: {
-//                'jquery-rss': {
-//                    path: 'node_modules/jquery-rss/src/jquery.rss.js',
-//                    exports: 'null',
-//                    depends: {
-//                        jquery: 'jQuery'
-//                    }
-//                }
+                'angular': {
+                    path: 'node_modules/angular/index-browserify.js',
+                    exports: 'angular'
+                }
             }
         }))
         .pipe(gulp.dest(DIST))
