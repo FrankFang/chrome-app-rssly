@@ -56,7 +56,7 @@ gulp.task('watch', function () {
 });
 
 gulp.task('copyNewer', function () {
-    gulp.src(APP + '**/*', '!' + APP + 'app')
-        .pipe(newer(APP + '**/*'))
+    gulp.src([APP + '**/*', '!' + APP + 'app'])
+        .pipe(newer([APP + '**/*', '!' + APP + 'app']))
         .pipe(gulp.dest(DIST))
 })

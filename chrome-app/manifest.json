@@ -17,6 +17,7 @@
     "permissions": [
         "storage",
         "http://localhost:8080/",
-        "http://ajax.googleapis.com/"
+        "http://ajax.googleapis.com/",
+        "https://ajax.googleapis.com/"
     ]
 }
