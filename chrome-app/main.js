@@ -4,3 +4,4 @@ window.onerror = function () {
 }
 var app = require('./app')
 require('./channels/controller')
+

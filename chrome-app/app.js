@@ -1,1 +1,3 @@
-module.exports = angular.module('rssly', [])
+require('angular-chrome-storage')
+
+module.exports = angular.module('rssly', ['chromeStorage'])
