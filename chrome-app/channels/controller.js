@@ -2,30 +2,43 @@
 var app = require('../app.js')
 
 app.controller('ctrlChannels', [
-    '$scope', 'chromeStorage',
-    function ($scope, chromeStorage) {
-        var list = $scope.list = []
-        chromeStorage.get('channels').then(function (value) {
-            $scope.list = value
+    '$scope',
+    function ($scope) {
+
+        $scope.list = []
+
+        chrome.storage.local.get(function (response) {
+            if (!response.channels) {return}
+            $scope.list = response.channels || []
+            $scope.$apply()
         })
 
         $scope.newItem = ''
 
         $scope.addItem = function () {
+            if (newItem === undefined) { return }
             var newItem = $scope.newItem.trim()
             if (newItem === '') {return}
-            list.push({url: newItem})
+            $scope.list.push({url: newItem})
             $scope.newItem = ''
         }
+
         $scope.$watch('list', function (value) {
-            chromeStorage.set('channels', value)
-            // FIXME: no set?
+            chrome.storage.local.set({'channels': value}, function (a, b, c) {
+                console.log('storage is set')
+                chrome.storage.local.get(function (response) {
+                    console.log("response:")
+                    console.log(response)
+
+                })
+            })
         }, true)
 
 
-        $scope.hide = true
+        $scope.open = false
+
         $scope.toggle = function () {
-            $scope.hide = !$scope.hide
+            $scope.open = !$scope.open
         }
     }
 ])

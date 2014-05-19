@@ -33,10 +33,6 @@ gulp.task('browserify', function () {
                 'angular': {
                     path: 'node_modules/angular/index-browserify.js',
                     exports: 'angular'
-                },
-                'angular-chrome-storage': {
-                    path: 'chrome-app/vendors/angular-chrome-storage.js',
-                    exports: 'chromeStorage'
                 }
             }
         }))

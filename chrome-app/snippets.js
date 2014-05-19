@@ -42,3 +42,9 @@ function onGetFeed(error, feed) {
 
 
 
+//    scope.$apply(model.assign(scope, false));
+
+
+
+// scope: true,    // optionally create a child scope
+// link: ...
