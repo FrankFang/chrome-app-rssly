@@ -3,10 +3,11 @@ var app = require('../app')
 require('../articles/service.js')
 
 module.exports = app.directive(
-    'test',
+    'checkChannel',
     function ($http, articleService, $rootScope) {
         return {
             link: function (scope, element, attr) {
+
                 element.addClass('loading')
 
                 articleService.check(scope.item.url)

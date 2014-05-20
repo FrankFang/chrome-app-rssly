@@ -7,10 +7,10 @@ window.onerror = function () {
 require('./app')
 
 require('./directives/focusMe')
-require('./directives/test')
+require('./directives/checkChannel')
+require('./directives/resizer')
 
 require('./channels/controller')
-
 require('./articles/controller')
 
 

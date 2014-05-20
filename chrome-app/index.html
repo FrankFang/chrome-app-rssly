@@ -7,12 +7,15 @@
   </head>
   <body>
     <div class="page">
-      <section class="channelList" ng-controller="ctrlChannels">
+      <section class="channelList"
+               ng-controller="ctrlChannels"
+               resizer="horizontal"
+        >
         <ol>
           <li ng-repeat="item in list track by $index"
               ng-click="removeItem($index)"
               ng-class="{error:fail}"
-              test
+              check-channel
             >
             {{item.url}}
           </li>
