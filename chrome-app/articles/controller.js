@@ -4,7 +4,7 @@ var app = require('../app.js')
 
 app.controller('ctrlArticles', [
     '$scope',
-    function ($scope, $rootScope) {
+    function ($scope) {
         $scope.$on('get:articles', function (event, data) {
 
             console.log("data:")

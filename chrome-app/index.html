@@ -9,7 +9,11 @@
     <div class="page">
       <section class="channelList" ng-controller="ctrlChannels">
         <ol>
-          <li ng-repeat="item in list track by $index" test ng-click="removeItem($index)">
+          <li ng-repeat="item in list track by $index"
+              ng-click="removeItem($index)"
+              ng-class="{error:fail}"
+              test
+            >
             {{item.url}}
           </li>
         </ol>
@@ -19,10 +23,10 @@
           <div class="relative">
             <button name="addChannel" ng-click="toggle()">add</button>
             <form ng-hide="!open" ng-submit="addItem()"
-              style="width: 11rem;" required>
+                  style="width: 11rem;" required>
 
               <input focus-me="open" placeholder="RSS Source"
-                ng-model="newItem"/>
+                     ng-model="newItem"/>
               <button type="submit">OK</button>
 
             </form>

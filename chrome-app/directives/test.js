@@ -1,26 +1,22 @@
 /* Created by frank on 14-5-20. */
 var app = require('../app')
+require('../articles/service.js')
 
 module.exports = app.directive(
     'test',
-    function ($http, $rootScope) {
+    function ($http, articleService, $rootScope) {
         return {
             link: function (scope, element, attr) {
-                var url = 'https://ajax.googleapis.com/ajax/services/feed/load'
-                var params = {
-                    v: '2.0',
-                    q: scope.item.url,
-                    num: 20
-                }
                 element.addClass('loading')
-                $http({method: 'GET', url: url, params: params}).
-                    success(function (data, status, headers, config) {
-                        console.log('emit')
-                        $rootScope.$broadcast('get:articles', data)
+
+                articleService.check(scope.item.url)
+                    .success(function (data, status, headers, config) {
+                        if (data.responseStatus !== 200) {
+                            scope.fail = true
+                        }
                     })
                     .error(function (data, status, headers, config) {
-                        console.log("status:")
-                        console.log(status)
+                        scope.fail = true
                     })
                     .finally(function () {
                         element.removeClass('loading')

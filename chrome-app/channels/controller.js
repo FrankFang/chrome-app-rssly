@@ -1,9 +1,10 @@
 /* Created by frank on 14-5-19. */
 var app = require('../app.js')
+require('../articles/service.js')
 
 app.controller('ctrlChannels', [
-    '$scope', '$rootScope',
-    function ($scope, $rootScope) {
+    '$scope', '$rootScope', 'articleService',
+    function ($scope, $rootScope, articleService) {
 
         $scope.list = []
 
@@ -19,7 +20,7 @@ app.controller('ctrlChannels', [
             if ($scope.newItem === undefined) { return }
             var newItem = $scope.newItem.trim()
             if (newItem === '') {return}
-//            $scope.list.push({url: newItem})
+            $scope.list.push({url: newItem})
             $rootScope.$broadcast('query:channel', $scope.newItem)
             $scope.newItem = ''
         }
