@@ -9,13 +9,13 @@
     <div class="page">
       <section class="channelList" ng-controller="ctrlChannels">
         <ol>
-          <li ng-repeat="item in list track by $index">
+          <li ng-repeat="item in list track by $index" test ng-click="removeItem($index)">
             {{item.url}}
           </li>
         </ol>
         <footer>
           <button>refresh</button>
-          
+
           <div class="relative">
             <button name="addChannel" ng-click="toggle()">add</button>
             <form ng-hide="!open" ng-submit="addItem()"
@@ -29,7 +29,7 @@
           </div>
         </footer>
       </section>
-      <section class="entryList"></section>
+      <section class="entryList" ng-controller="ctrlArticles"></section>
       <section class="preview">Hello {{'World'}}!</section>
     </div>
 

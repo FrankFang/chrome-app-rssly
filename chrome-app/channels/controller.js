@@ -16,12 +16,14 @@ app.controller('ctrlChannels', [
         $scope.newItem = ''
 
         $scope.addItem = function () {
-            console.log(newItem)
-            if (newItem === undefined) { return }
+            if ($scope.newItem === undefined) { return }
             var newItem = $scope.newItem.trim()
             if (newItem === '') {return}
             $scope.list.push({url: newItem})
             $scope.newItem = ''
+        }
+        $scope.removeItem = function (index) {
+            $scope.list.splice(index, 1);
         }
 
         $scope.$watch('list', function (value) {

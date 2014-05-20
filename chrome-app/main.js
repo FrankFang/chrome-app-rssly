@@ -7,6 +7,8 @@ window.onerror = function () {
 var app = require('./app')
 
 require('./directives/focusMe')
+require('./directives/test')
 
 require('./channels/controller')
+require('./articles/controller')
 
