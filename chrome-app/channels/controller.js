@@ -16,6 +16,7 @@ app.controller('ctrlChannels', [
         $scope.newItem = ''
 
         $scope.addItem = function () {
+            console.log(newItem)
             if (newItem === undefined) { return }
             var newItem = $scope.newItem.trim()
             if (newItem === '') {return}
@@ -24,14 +25,7 @@ app.controller('ctrlChannels', [
         }
 
         $scope.$watch('list', function (value) {
-            chrome.storage.local.set({'channels': value}, function (a, b, c) {
-                console.log('storage is set')
-                chrome.storage.local.get(function (response) {
-                    console.log("response:")
-                    console.log(response)
-
-                })
-            })
+            chrome.storage.local.set({'channels': value})
         }, true)
 
 

@@ -1,54 +1,59 @@
 <!DOCTYPE html>
 <html lang="en" data-ng-app="rssly">
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-        <link rel="stylesheet" href="style.css"/>
-    </head>
-    <body>
-        <div class="page">
-            <section class="channelList" ng-controller="ctrlChannels">
-                <ol>
-                    <li ng-repeat="item in list track by $index">
-                        {{item.url}}
-                    </li>
-                </ol>
-                <footer>
-                    <button>refresh</button>
-                    <div class="relative">
-                        <button name="addChannel" ng-click="toggle()">add</button>
-                        <form name="form1" ng-hide="!open" ng-submit="addItem()" ng-class="" style="width: 11rem;" required>
-                            <input focus-me="open" type="text" placeholder="RSS Source" ng-model="newItem" ng-pattern="/[0-9]+/"/>
-                            <button type="submit">OK</button>
-                        </form>
-                    </div>
-                </footer>
-            </section>
-            <section class="entryList"></section>
-            <section class="preview">Hello {{'World'}}!</section>
-        </div>
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <div class="page">
+      <section class="channelList" ng-controller="ctrlChannels">
+        <ol>
+          <li ng-repeat="item in list track by $index">
+            {{item.url}}
+          </li>
+        </ol>
+        <footer>
+          <button>refresh</button>
+          
+          <div class="relative">
+            <button name="addChannel" ng-click="toggle()">add</button>
+            <form ng-hide="!open" ng-submit="addItem()"
+              style="width: 11rem;" required>
+
+              <input focus-me="open" placeholder="RSS Source"
+                ng-model="newItem"/>
+              <button type="submit">OK</button>
+
+            </form>
+          </div>
+        </footer>
+      </section>
+      <section class="entryList"></section>
+      <section class="preview">Hello {{'World'}}!</section>
+    </div>
 
 
-        <template id="channel">
-            <hgroup>
-                <h1>title</h1>
-                <h2>description</h2>
-            </hgroup>
+    <template id="channel">
+      <hgroup>
+        <h1>title</h1>
+        <h2>description</h2>
+      </hgroup>
 
-        </template>
+    </template>
 
-        <template id="entry">
-            <a class="link" href="#" target="_blank">
-                <h1>title</h1>
-            </a>
-            <span class="author"></span>
-            <time>publishDate</time>
-            <article></article>
-            <aside></aside>
-        </template>
+    <template id="entry">
+      <a class="link" href="#" target="_blank">
+        <h1>title</h1>
+      </a>
+      <span class="author"></span>
+      <time>publishDate</time>
+      <article></article>
+      <aside></aside>
+    </template>
 
-        <script src="vendors/angular.min.js"></script>
-        <script src=main.js></script>
+    <script src="vendors/angular.min.js"></script>
+    <script src=main.js></script>
 
-    </body>
+  </body>
 </html>
