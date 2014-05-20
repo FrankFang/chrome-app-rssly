@@ -4,7 +4,7 @@ window.onerror = function () {
 }
 
 //chrome.storage.local.clear()
-var app = require('./app')
+require('./app')
 
 require('./directives/focusMe')
 require('./directives/test')

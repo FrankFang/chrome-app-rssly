@@ -2,8 +2,8 @@
 var app = require('../app.js')
 
 app.controller('ctrlChannels', [
-    '$scope',
-    function ($scope) {
+    '$scope', '$rootScope',
+    function ($scope, $rootScope) {
 
         $scope.list = []
 
@@ -19,7 +19,8 @@ app.controller('ctrlChannels', [
             if ($scope.newItem === undefined) { return }
             var newItem = $scope.newItem.trim()
             if (newItem === '') {return}
-            $scope.list.push({url: newItem})
+//            $scope.list.push({url: newItem})
+            $rootScope.$broadcast('query:channel', $scope.newItem)
             $scope.newItem = ''
         }
         $scope.removeItem = function (index) {
