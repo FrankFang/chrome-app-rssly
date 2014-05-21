@@ -6,6 +6,8 @@ module.exports = app.directive(
     'checkChannel',
     function ($http, articleService, $rootScope) {
         return {
+            restrict: 'E',
+            //replace: true,
             link: function (scope, element, attr) {
 
                 element.addClass('loading')
@@ -13,7 +15,10 @@ module.exports = app.directive(
                 articleService.check(scope.item.url)
                     .success(function (data, status, headers, config) {
                         if (data.responseStatus !== 200) {
-                            scope.fail = true
+                            scope.item.fail = true
+                        } else {
+                            scope.item.title = data.responseData.feed.title
+                            console.log('done')
                         }
                     })
                     .error(function (data, status, headers, config) {

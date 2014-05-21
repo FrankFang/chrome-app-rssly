@@ -7,17 +7,21 @@
   </head>
   <body>
     <div class="page">
-      <section class="channelList"
-               ng-controller="ctrlChannels"
-               resizer="horizontal"
-        >
+      <section class="channelList" ng-controller="ctrlChannels">
         <ol>
           <li ng-repeat="item in list track by $index"
               ng-click="removeItem($index)"
               ng-class="{error:fail}"
-              check-channel
             >
-            {{item.url}}
+            <check-channel url="item.url"></check-channel>
+            <div ng-switch="item.fail">
+              <div ng-switch-when="true">
+                Unable to fetch articles
+              </div>
+              <div ng-switch-default>
+                {{item.title}}
+              </div>
+            </div>
           </li>
         </ol>
         <footer>

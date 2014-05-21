@@ -24,6 +24,7 @@ app.controller('ctrlChannels', [
             $rootScope.$broadcast('query:channel', $scope.newItem)
             $scope.newItem = ''
         }
+
         $scope.removeItem = function (index) {
             $scope.list.splice(index, 1);
         }
@@ -32,11 +33,11 @@ app.controller('ctrlChannels', [
             chrome.storage.local.set({'channels': value})
         }, true)
 
-
         $scope.open = false
 
         $scope.toggle = function () {
             $scope.open = !$scope.open
         }
+
     }
 ])

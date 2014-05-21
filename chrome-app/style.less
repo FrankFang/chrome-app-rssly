@@ -20,7 +20,9 @@ body { overflow-y: hidden; }
 }
 
 .channelList { width: 15rem;
-    > ol { flex: 1; }
+    > ol { flex: 1;
+        li { border-bottom: 1px solid #DDD; }
+    }
     > footer { height: 2rem; display: inline-flex;
         button[name=addChannel] { position: relative;
             & + form { position: absolute; bottom: 100%; }
