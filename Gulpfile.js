@@ -62,7 +62,7 @@ gulp.task('html', function () {
 });
 
 gulp.task('watch', function () {
-    gulp.watch([TEST + '*'], ['html']);
+    //gulp.watch([TEST + '*'], ['html']);
     gulp.watch([APP + '**/*', '!' + APP + 'main.js'], ['copy'])
     gulp.watch([APP + '**/*.js'], ['browserify'])
     gulp.watch([APP + '**/*.less'], ['less'])
