@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "yet another rss reader",
   "scripts": {
-    "debug": "node test/index.js; gulp debug"
+    "debug": "node test/index.js; gulp debug",
+    "styleguide":"kss-node"
   },
   "repository": {
     "type": "git",
@@ -26,7 +27,8 @@
     "gulp-newer": "~0.3.0",
     "gulp-clean": "~0.2.4",
     "browserify": "~4.1.5",
-    "gulp-less": "~1.2.3"
+    "gulp-less": "~1.2.3",
+    "kss": "~0.3.7"
   },
   "dependencies": {
     "jquery": "~2.1.1",
