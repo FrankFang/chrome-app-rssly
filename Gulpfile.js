@@ -14,7 +14,7 @@ gulp.task('clean', function () {
         .pipe(clean());
 });
 
-gulp.task('debug', ['clean', 'connect', 'copy', 'less', 'browserify', 'watch'])
+gulp.task('debug', ['clean', 'copy', 'less', 'browserify', 'watch'])
 
 gulp.task('copy', function () {
     return gulp
