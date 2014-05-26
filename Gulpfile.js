@@ -48,7 +48,10 @@ gulp.task('connect', function () {
 
 var less = require('gulp-less')
 gulp.task('less', function () {
-    return gulp.src(APP + '**/*.less')
+    return gulp.src([
+            APP + '**/*.less',
+            APP + '**/_*.less'
+    ])
         .pipe(less())
         .pipe(gulp.dest(DIST))
 });
