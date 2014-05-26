@@ -4,11 +4,15 @@ window.onerror = function () {
 }
 
 //chrome.storage.local.clear()
+chrome.contextMenus.create({
+    type: 'normal',
+    title: 'Menu A',
+    id: 'a'
+});
 require('./app')
 
 require('./directives/focusMe')
 require('./directives/checkChannel')
-require('./directives/resizer')
 
 require('./channels/controller')
 require('./articles/controller')

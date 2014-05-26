@@ -10,7 +10,7 @@
       <section class="channelList" ng-controller="ctrlChannels">
         <ol>
           <li ng-repeat="item in list track by $index"
-              ng-click="removeItem($index)"
+              ng-click="expendItem($index)"
               ng-class="{error:fail}"
             >
             <check-channel url="item.url"></check-channel>
@@ -22,6 +22,7 @@
                 {{item.title}}
               </div>
             </div>
+            <div ng-show="expend">here</div>
           </li>
         </ol>
         <footer>

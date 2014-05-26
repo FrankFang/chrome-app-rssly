@@ -25,6 +25,10 @@ app.controller('ctrlChannels', [
             $scope.newItem = ''
         }
 
+        $scope.expendItem = function () {
+            $scope.expend = !$scope.expend
+        }
+
         $scope.removeItem = function (index) {
             $scope.list.splice(index, 1);
         }

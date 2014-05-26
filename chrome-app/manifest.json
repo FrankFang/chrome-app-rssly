@@ -17,7 +17,8 @@
     "permissions": [
         "storage",
         "http://*/",
-        "https://*/"
+        "https://*/",
+        "contextMenus"
     ],
     "sandbox": {
         "pages": ["sandbox.html"]
