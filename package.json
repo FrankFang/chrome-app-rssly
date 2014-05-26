@@ -4,6 +4,7 @@
   "description": "yet another rss reader",
   "scripts": {
     "debug": "node test/index.js; gulp debug",
+      "postinstall":"npm run styleguide",
     "styleguide":"kss-node chrome-app/styles/ --less chrome-app/styles/_styleguide.less"
   },
   "repository": {
