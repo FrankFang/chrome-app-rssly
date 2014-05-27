@@ -1,4 +1,5 @@
 Rssly Style Guide
 ==================
 
-[Feed item](./section-1.html)
+[Feed items](./section-1.html)
+[Article items](./section-2.html)
