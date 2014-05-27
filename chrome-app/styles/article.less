@@ -1,0 +1,25 @@
+// Article
+//
+// Article item styles.
+//
+// Markup:
+// <section class="article {$modifiers}"><time>12:34</time><h2>The Dangers of Stopping Event Propagation The Dangers of Stopping Event Propagation</h2></section>
+//
+// :hover           - Mouse over status.
+// .active          - Indicate that the article is selected.
+// .mute            - Indicate that the article is read.
+// .highlight       - Indicate that the article is unread.
+//
+// Styleguide 2
+
+.article { font-size: 20px; color: #777777; overflow: hidden; padding: 10px 25px;
+    > time { font-size: 14px; color: hsla(0, 0%, 0%, 0.24); line-height: 1; }
+    > h2 { display: block; vertical-align: middle; margin: 0 0 15px; font-size: inherit; font-weight: normal;
+        line-height: 1.2em; color: inherit; font-family: inherit;
+    }
+    &.active, &:hover { background: #FAFAFA; }
+    &.mute { color: #bbb; }
+    &.highlight { color: #111; }
+
+}
+

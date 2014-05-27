@@ -1,9 +1,9 @@
 // Feed
 //
-// Feed item styles.
+// Feed item styles
 //
 // Markup:
-// <section class="feed {$modifiers}"><i><img src="http://www.36kr.com/favicon.ico"></i><p>Title</p></section>
+// <section class="feed {$modifiers}"><i><img src="http://www.36kr.com/favicon.ico"></i><h1>Title</h1></section>
 //
 // :hover           - Mouse over status.
 // .active          - Indicate that the feed is selected.
@@ -22,7 +22,8 @@
             width: 16px; height: 16px;
         }
     }
-    > p { display: inline-block; vertical-align: middle; margin: 18px 0; }
+    > h1 { font-size: inherit; font-weight: normal; color: inherit; font-family: inherit;
+        display: inline-block; vertical-align: middle; margin: 18px 0; }
     &.active, &:hover { background: #FAFAFA; }
     &.mute { color: #bbb; }
     &.highlight { color: #111; }
