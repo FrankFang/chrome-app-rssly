@@ -43,10 +43,10 @@
         
         
           
-            <h1 class="kss-title"><span class="kss-ref">1.0</span> - Feed</h1>
+            <h1 class="kss-title"><span class="kss-ref">3.0</span> - Input</h1>
           
             
-                <div class="kss-box"><p>Feed item styles</p>
+                <div class="kss-box"><p>Input styles</p>
 </div>
                 <table class="kss-mod-list">
                   <tr class="kss-mod-desc-group">
@@ -54,48 +54,49 @@
                     <td class="kss-mod-name"></td>
                   </tr>
                   <tr class="kss-mod-example">
-                    <td colspan="2"><section class="feed {$modifiers}"><i><img src="http://www.36kr.com/favicon.ico"></i><h1>Title</h1></section></td>
+                    <td colspan="2"><input class="{$modifiers}" type="text" placeholder="input text">
+<input class="{$modifiers}" type="text" value="hello, ">
+<input class="{$modifiers}" type="text" value="disabled" disabled></td>
                   </tr>
                 
                   <tr class="kss-mod-desc-group">
-                    <td class="kss-mod-desc"><p>Mouse over status.</p>
+                    <td class="kss-mod-desc"><p>disabled</p>
 </td>
-                    <td class="kss-mod-name"><p>:hover</p></td>
+                    <td class="kss-mod-name"><p>.disabled</p></td>
                   </tr>
                   <tr class="kss-mod-example">
-                    <td colspan="2"><section class="feed pseudo-class-hover"><i><img src="http://www.36kr.com/favicon.ico"></i><h1>Title</h1></section></td>
+                    <td colspan="2"><input class="disabled" type="text" placeholder="input text">
+<input class="disabled" type="text" value="hello, ">
+<input class="disabled" type="text" value="disabled" disabled></td>
                   </tr>
                 
                   <tr class="kss-mod-desc-group">
-                    <td class="kss-mod-desc"><p>Indicate that the feed is selected.</p>
+                    <td class="kss-mod-desc"><p>focus</p>
 </td>
-                    <td class="kss-mod-name"><p>.active</p></td>
+                    <td class="kss-mod-name"><p>:focus</p></td>
                   </tr>
                   <tr class="kss-mod-example">
-                    <td colspan="2"><section class="feed active"><i><img src="http://www.36kr.com/favicon.ico"></i><h1>Title</h1></section></td>
+                    <td colspan="2"><input class="pseudo-class-focus" type="text" placeholder="input text">
+<input class="pseudo-class-focus" type="text" value="hello, ">
+<input class="pseudo-class-focus" type="text" value="disabled" disabled></td>
                   </tr>
                 
                   <tr class="kss-mod-desc-group">
-                    <td class="kss-mod-desc"><p>Indicate that the feed is not up to date or something else.</p>
+                    <td class="kss-mod-desc"><p>error</p>
 </td>
-                    <td class="kss-mod-name"><p>.mute</p></td>
+                    <td class="kss-mod-name"><p>.error</p></td>
                   </tr>
                   <tr class="kss-mod-example">
-                    <td colspan="2"><section class="feed mute"><i><img src="http://www.36kr.com/favicon.ico"></i><h1>Title</h1></section></td>
-                  </tr>
-                
-                  <tr class="kss-mod-desc-group">
-                    <td class="kss-mod-desc"><p>Indicate that the feed contains unread articles.</p>
-</td>
-                    <td class="kss-mod-name"><p>.highlight</p></td>
-                  </tr>
-                  <tr class="kss-mod-example">
-                    <td colspan="2"><section class="feed highlight"><i><img src="http://www.36kr.com/favicon.ico"></i><h1>Title</h1></section></td>
+                    <td colspan="2"><input class="error" type="text" placeholder="input text">
+<input class="error" type="text" value="hello, ">
+<input class="error" type="text" value="disabled" disabled></td>
                   </tr>
                 
                 </table>
                 <div class="kss-markup">
-                  <pre class="prettyprint lang-html">&lt;section class=&quot;feed {$modifiers}&quot;&gt;&lt;i&gt;&lt;img src=&quot;http://www.36kr.com/favicon.ico&quot;&gt;&lt;/i&gt;&lt;h1&gt;Title&lt;/h1&gt;&lt;/section&gt;</pre>
+                  <pre class="prettyprint lang-html">&lt;input class=&quot;{$modifiers}&quot; type=&quot;text&quot; placeholder=&quot;input text&quot;&gt;
+&lt;input class=&quot;{$modifiers}&quot; type=&quot;text&quot; value=&quot;hello, &quot;&gt;
+&lt;input class=&quot;{$modifiers}&quot; type=&quot;text&quot; value=&quot;disabled&quot; disabled&gt;</pre>
                 </div>
             
            
