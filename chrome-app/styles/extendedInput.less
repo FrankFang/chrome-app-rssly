@@ -10,19 +10,18 @@
 @import "_variables";
 
 .extendedInput {
-    position: relative;
+    display: flex;
     color: @color;
     height: 100%;
-    input[type=text] {
-        border-color: transparent;
-    }
+    input[type=text] { border-color: transparent; flex: 1; }
     button, input[type=button], input[type=submit] {
         cursor: pointer;
         border: none;
         background: transparent;
         font-size: inherit;
         font-family: inherit;
-        color: inherit; padding: 0 1em;
+        color: inherit;
+        padding: 0 1.3em;
         border-left: 1px solid @border-color;
         height: 100%; margin-left: 1em;
         &:focus { outline: none; color: @dark-color; }

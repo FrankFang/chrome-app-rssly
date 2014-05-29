@@ -13,17 +13,17 @@
 // Styleguide 1
 @import "_variables";
 
-.feed {
+.feed { position: relative; padding: 18px 0;
     font-size: @normal-font-size; color: @color;
     @favicon-size: 16px;
-    > i {
+    > i { position: absolute;
         display: inline-block;
         width: @favicon-size * 2; height: @favicon-size * 2;
         vertical-align: middle;
         text-align: center; line-height: 32px;
         border-radius: @favicon-size;
         border: 1px solid @border-color;
-        position: relative; overflow: hidden;
+        overflow: hidden;
         margin-left: 20px; margin-right: 15px;
         img {
             position: absolute;
@@ -33,8 +33,8 @@
     }
     > h1 {
         font-size: inherit; font-weight: normal; color: inherit; font-family: inherit;
-        display: inline-block; vertical-align: middle;
-        margin: 18px 0;
+        vertical-align: middle; white-space: nowrap; text-overflow: ellipsis;
+        padding-left: 65px; overflow: hidden;
     }
     &.active, &:hover { background: @light-color; }
     &.mute { color: @mute-color; }

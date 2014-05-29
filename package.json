@@ -3,7 +3,7 @@
     "version": "0.0.1",
     "description": "yet another rss reader",
     "scripts": {
-        "debug": "nodemon --exec 'kss-node chrome-app/styles/ --less chrome-app/styles/_styleguide.less' -e less & node test/index.js; gulp debug",
+        "debug": "gulp debug",
         "postinstall": "npm run styleguide",
         "styleguide": "kss-node chrome-app/styles/ --less chrome-app/styles/_styleguide.less"
     },

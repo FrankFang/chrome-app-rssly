@@ -4,50 +4,180 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="styles/reset.css"/>
+    <link rel="stylesheet" href="styles/layout.css"/>
+    <link rel="stylesheet" href="styles/feed.css"/>
+    <link rel="stylesheet" href="styles/article.css"/>
+    <link rel="stylesheet" href="styles/input.css"/>
+    <link rel="stylesheet" href="styles/extendedInput.css"/>
     <link rel="stylesheet" href="styles/app.css"/>
   </head>
   <body>
     <div class="page">
-      <section class="channelList" ng-controller="ctrlChannels">
+      <section class="channelList">
+        <h1 class="upper">Rssly</h1>
         <ol>
-          <li ng-repeat="item in list track by $index"
-              ng-click="expendItem($index)"
-              ng-class="{error:fail}"
-            >
-            <check-channel url="item.url"></check-channel>
-            <div ng-switch="item.fail">
-              <div ng-switch-when="true">
-                Unable to fetch articles
-              </div>
-              <div ng-switch-default>
-                {{item.title}}
-              </div>
-            </div>
-            <div ng-show="expend">here</div>
+          <li>
+            <section class="feed">
+              <i><img src="http://www.36kr.com/favicon.ico"></i>
+              <h1>我是一个粉刷匠</h1>
+            </section>
+          </li>
+          <li>
+            <section class="feed">
+              <i><img src="http://www.36kr.com/favicon.ico"></i>
+              <h1>粉刷本领强</h1>
+            </section>
+          </li>
+          <li>
+            <section class="feed">
+              <i><img src="http://www.36kr.com/favicon.ico"></i>
+              <h1 title="我要把那新房子刷得更漂亮">我要把那新房子刷得更漂亮</h1>
+            </section>
+          </li>
+          <li>
+            <section class="feed">
+              <i><img src="http://www.36kr.com/favicon.ico"></i>
+              <h1>我是一个粉刷匠</h1>
+            </section>
+          </li>
+          <li>
+            <section class="feed">
+              <i><img src="http://www.36kr.com/favicon.ico"></i>
+              <h1>粉刷本领强</h1>
+            </section>
+          </li>
+          <li>
+            <section class="feed">
+              <i><img src="http://www.36kr.com/favicon.ico"></i>
+              <h1 title="我要把那新房子刷得更漂亮">我要把那新房子刷得更漂亮</h1>
+            </section>
+          </li>
+          <li>
+            <section class="feed">
+              <i><img src="http://www.36kr.com/favicon.ico"></i>
+              <h1>我是一个粉刷匠</h1>
+            </section>
+          </li>
+          <li>
+            <section class="feed">
+              <i><img src="http://www.36kr.com/favicon.ico"></i>
+              <h1>粉刷本领强</h1>
+            </section>
+          </li>
+          <li>
+            <section class="feed">
+              <i><img src="http://www.36kr.com/favicon.ico"></i>
+              <h1 title="我要把那新房子刷得更漂亮">我要把那新房子刷得更漂亮</h1>
+            </section>
+          </li>
+          <li>
+            <section class="feed">
+              <i><img src="http://www.36kr.com/favicon.ico"></i>
+              <h1>我是一个粉刷匠</h1>
+            </section>
+          </li>
+          <li>
+            <section class="feed">
+              <i><img src="http://www.36kr.com/favicon.ico"></i>
+              <h1>粉刷本领强</h1>
+            </section>
+          </li>
+          <li>
+            <section class="feed">
+              <i><img src="http://www.36kr.com/favicon.ico"></i>
+              <h1 title="我要把那新房子刷得更漂亮">我要把那新房子刷得更漂亮</h1>
+            </section>
           </li>
         </ol>
         <footer>
-          <button>refresh</button>
-
-          <div class="relative">
-            <button name="addChannel" ng-click="toggle()">add</button>
-            <form ng-hide="!open" ng-submit="addItem()"
-                  style="width: 11rem;" required>
-
-              <input focus-me="open" placeholder="RSS Source"
-                     ng-model="newItem"/>
-              <button type="submit">OK</button>
-
-            </form>
+          <div class="extendedInput">
+            <input type="text" placeholder="http://"/>
+            <button>Add</button>
           </div>
         </footer>
       </section>
-      <section class="entryList" ng-controller="ctrlArticles"></section>
+      <section class="entryList" ng-controller="ctrlArticles">
+        <ol>
+          <li>
+            <section class="article {$modifiers}">
+              <time>12:34</time>
+              <h2>The Dangers of Stopping Event Propagation The Dangers of Stopping Event Propagation</h2>
+            </section>
+          </li>
+          <li>
+            <section class="article {$modifiers}">
+              <time>12:34</time>
+              <h2>The Dangers of Stopping Event Propagation The Dangers of Stopping Event Propagation</h2>
+            </section>
+          </li>
+          <li>
+            <section class="article {$modifiers}">
+              <time>12:34</time>
+              <h2>The Dangers of Stopping Event Propagation The Dangers of Stopping Event Propagation</h2>
+            </section>
+          </li>
+          <li>
+            <section class="article {$modifiers}">
+              <time>12:34</time>
+              <h2>The Dangers of Stopping Event Propagation The Dangers of Stopping Event Propagation</h2>
+            </section>
+          </li>
+          <li>
+            <section class="article {$modifiers}">
+              <time>12:34</time>
+              <h2>The Dangers of Stopping Event Propagation The Dangers of Stopping Event Propagation</h2>
+            </section>
+          </li>
+          <li>
+            <section class="article {$modifiers}">
+              <time>12:34</time>
+              <h2>The Dangers of Stopping Event Propagation The Dangers of Stopping Event Propagation</h2>
+            </section>
+          </li>
+          <li>
+            <section class="article {$modifiers}">
+              <time>12:34</time>
+              <h2>The Dangers of Stopping Event Propagation The Dangers of Stopping Event Propagation</h2>
+            </section>
+          </li>
+          <li>
+            <section class="article {$modifiers}">
+              <time>12:34</time>
+              <h2>The Dangers of Stopping Event Propagation The Dangers of Stopping Event Propagation</h2>
+            </section>
+          </li>
+          <li>
+            <section class="article {$modifiers}">
+              <time>12:34</time>
+              <h2>The Dangers of Stopping Event Propagation The Dangers of Stopping Event Propagation</h2>
+            </section>
+          </li>
+          <li>
+            <section class="article {$modifiers}">
+              <time>12:34</time>
+              <h2>The Dangers of Stopping Event Propagation The Dangers of Stopping Event Propagation</h2>
+            </section>
+          </li>
+          <li>
+            <section class="article {$modifiers}">
+              <time>12:34</time>
+              <h2>The Dangers of Stopping Event Propagation The Dangers of Stopping Event Propagation</h2>
+            </section>
+          </li>
+          <li>
+            <section class="article {$modifiers}">
+              <time>12:34</time>
+              <h2>The Dangers of Stopping Event Propagation The Dangers of Stopping Event Propagation</h2>
+            </section>
+          </li>
+        </ol>
+      </section>
       <section class="preview">Hello {{'World'}}!</section>
     </div>
 
 
     <template id="channel">
+
       <hgroup>
         <h1>title</h1>
         <h2>description</h2>
@@ -65,8 +195,8 @@
       <aside></aside>
     </template>
 
-    <script src="vendors/angular.min.js"></script>
-    <script src=main.js></script>
+    <!--<script src="vendors/angular.min.js"></script>-->
+    <!--<script src=main.js></script>-->
 
   </body>
 </html>

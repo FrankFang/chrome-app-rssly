@@ -1,0 +1,10 @@
+html, body { height: 100%; overflow: hidden; }
+.page { height: 100%; overflow: hidden; }
+
+.page { display: flex;
+    > section { display: flex; flex-direction: column; overflow-y: auto; overflow-x: hidden;
+        &:first-child { width: 15em; }
+        &:nth-child(2) { width: 20em; }
+        &:nth-child(3) { flex: 1; }
+    }
+}

@@ -5,7 +5,7 @@ chrome.app.runtime.onLaunched.addListener(function () {
             height: 600,
             width: 800
         },
-        frame: 'none',
+        //frame: 'none',  // The corners of frameless window is ugly!
         minWidth: 220,
         minHeight: 220
     })
