@@ -1,0 +1,27 @@
+// Extended Input
+//
+// Extended input styles
+//
+// Markup:
+// <div style="height:60px; display:inline-block;"><div class="extendedInput {$modifiers}"><input type="text"/><button>Add</button></div></div>
+// <div style="height:60px; display:inline-block;"><div class="extendedInput {$modifiers}"><input type="text"/><button disabled>Add</button></div></div>
+//
+// Styleguide 4
+@import "_variables";
+
+@_border-color: lighten(@color, 50%);
+@_placeholder-color: lighten(@color, 40%);
+
+.extendedInput { position: relative; color: @color; height: 100%;
+    input[type=text] { border-color: transparent; }
+    button, input[type=button], input[type=submit] {
+        cursor: pointer;
+        border: none; background: transparent; font-size: inherit; font-family: inherit;
+        color: inherit; padding: 0 1em;
+        border-left: 1px solid #c2c2c2;
+        height: 100%; margin-left: 1em;
+        &:focus { outline: none; color: @dark-color; }
+        &:disabled { color: @mute-color; }
+        &:not(:disabled):active { background: #c2c2c2; color: white; }
+    }
+}
