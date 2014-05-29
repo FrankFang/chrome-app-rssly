@@ -14,19 +14,29 @@
 @import "_variables";
 
 .feed {
-    font-size: 20px; color: @color;
-    > i { display: inline-block; width: 32px; height: 32px; vertical-align: middle;
+    font-size: @normal-font-size; color: @color;
+    @favicon-size: 16px;
+    > i {
+        display: inline-block;
+        width: @favicon-size * 2; height: @favicon-size * 2;
+        vertical-align: middle;
         text-align: center; line-height: 32px;
-        border-radius: 16px; border: 1px solid @border-color;
+        border-radius: @favicon-size;
+        border: 1px solid @border-color;
         position: relative; overflow: hidden;
         margin-left: 20px; margin-right: 15px;
-        img { position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto;
-            width: 16px; height: 16px;
+        img {
+            position: absolute;
+            top: 0; bottom: 0; left: 0; right: 0; margin: auto;
+            width: @favicon-size; height: @favicon-size;
         }
     }
-    > h1 { font-size: inherit; font-weight: normal; color: inherit; font-family: inherit;
-        display: inline-block; vertical-align: middle; margin: 18px 0; }
-    &.active, &:hover { background: @light-bg; }
+    > h1 {
+        font-size: inherit; font-weight: normal; color: inherit; font-family: inherit;
+        display: inline-block; vertical-align: middle;
+        margin: 18px 0;
+    }
+    &.active, &:hover { background: @light-color; }
     &.mute { color: @mute-color; }
     &.highlight { color: @dark-color; }
 

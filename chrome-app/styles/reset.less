@@ -3,7 +3,10 @@
 * { box-sizing: border-box; }
 html, body, ol, ul, dl { margin: 0; padding: 0; }
 ol, ul, dl { list-style: none; }
-html { font-size: 16px; line-height: @line-height; }
+html {
+    font-size: @root-font-size;
+    line-height: @root-line-height;
+}
 body { -webkit-user-select: text; font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
 }
