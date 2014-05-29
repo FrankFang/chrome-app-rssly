@@ -25,7 +25,17 @@ body {
     > footer { height: 4em; padding-left: 1em; border-top: 1px solid @border-color; }
 }
 .entryList { }
-.preview { }
+.preview { padding: 1em;
+    > aside {
+        > time { }
+        > .author { float: right; }
+    }
+    > article { font-size: 1rem;
+        h1 { font-size: 2em; line-height: 2; margin: 1rem 0; }
+        p { font-size: 1.2em; line-height: 1.5; margin: 1rem 0; }
+
+    }
+}
 
 
 
