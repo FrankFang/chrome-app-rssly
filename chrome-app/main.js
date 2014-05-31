@@ -4,17 +4,26 @@ window.onerror = function () {
 }
 
 //chrome.storage.local.clear()
-chrome.contextMenus.create({
-    type: 'normal',
-    title: 'Menu A',
-    id: 'a'
-});
+//chrome.contextMenus.create({
+//    type: 'normal',
+//    title: 'Menu A',
+//    id: 'a'
+//});
+
 require('./app')
 
-require('./directives/focusMe')
-require('./directives/checkChannel')
+//require('./directives/focusMe')
+//require('./directives/checkChannel')
 
-require('./channels/controller')
-require('./articles/controller')
+//require('./channels/controller')
+//require('./articles/controller')
 
+document.querySelector('.channelList').addEventListener('contextmenu', function (e) {
+    if (this.className.indexOf('editMode') >= 0) {
+        this.className = 'channelList'
+    } else {
+        this.className = 'channelList editMode'
+    }
+
+})
 

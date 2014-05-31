@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles/article.css"/>
     <link rel="stylesheet" href="styles/input.css"/>
     <link rel="stylesheet" href="styles/extendedInput.css"/>
+    <link rel="stylesheet" href="styles/button.css"/>
     <link rel="stylesheet" href="styles/app.css"/>
   </head>
   <body>
@@ -17,86 +18,28 @@
         <h1 class="upper">Rssly</h1>
         <ol>
           <li>
-            <section class="feed">
-              <i><img src="http://www.36kr.com/favicon.ico"></i>
-              <h1>我是一个粉刷匠</h1>
-            </section>
+            @@include('./include/feed.html', { "title": "我真的是一个不错的焚烧将" })
           </li>
           <li>
-            <section class="feed">
-              <i><img src="http://www.36kr.com/favicon.ico"></i>
-              <h1>粉刷本领强</h1>
-            </section>
+            @@include('./include/feed.html', { "title": "我是一个焚烧将" })
           </li>
           <li>
-            <section class="feed">
-              <i><img src="http://www.36kr.com/favicon.ico"></i>
-              <h1 title="我要把那新房子刷得更漂亮">我要把那新房子刷得更漂亮</h1>
-            </section>
-          </li>
-          <li>
-            <section class="feed">
-              <i><img src="http://www.36kr.com/favicon.ico"></i>
-              <h1>我是一个粉刷匠</h1>
-            </section>
-          </li>
-          <li>
-            <section class="feed">
-              <i><img src="http://www.36kr.com/favicon.ico"></i>
-              <h1>粉刷本领强</h1>
-            </section>
-          </li>
-          <li>
-            <section class="feed">
-              <i><img src="http://www.36kr.com/favicon.ico"></i>
-              <h1 title="我要把那新房子刷得更漂亮">我要把那新房子刷得更漂亮</h1>
-            </section>
-          </li>
-          <li>
-            <section class="feed">
-              <i><img src="http://www.36kr.com/favicon.ico"></i>
-              <h1>我是一个粉刷匠</h1>
-            </section>
-          </li>
-          <li>
-            <section class="feed">
-              <i><img src="http://www.36kr.com/favicon.ico"></i>
-              <h1>粉刷本领强</h1>
-            </section>
-          </li>
-          <li>
-            <section class="feed">
-              <i><img src="http://www.36kr.com/favicon.ico"></i>
-              <h1 title="我要把那新房子刷得更漂亮">我要把那新房子刷得更漂亮</h1>
-            </section>
-          </li>
-          <li>
-            <section class="feed">
-              <i><img src="http://www.36kr.com/favicon.ico"></i>
-              <h1>我是一个粉刷匠</h1>
-            </section>
-          </li>
-          <li>
-            <section class="feed">
-              <i><img src="http://www.36kr.com/favicon.ico"></i>
-              <h1>粉刷本领强</h1>
-            </section>
-          </li>
-          <li>
-            <section class="feed">
-              <i><img src="http://www.36kr.com/favicon.ico"></i>
-              <h1 title="我要把那新房子刷得更漂亮">我要把那新房子刷得更漂亮</h1>
-            </section>
+            @@include('./include/feed.html', { "title": "我是一个焚烧将" })
           </li>
         </ol>
         <footer>
-          <div class="extendedInput">
-            <input type="text" placeholder="http://"/>
-            <button>Add</button>
+          <div class="add">
+            <div class="extendedInput">
+              <input type="text" placeholder="http://"/>
+              <button>Add</button>
+            </div>
+          </div>
+          <div class="remove">
+            <button class="button">Remove</button>
           </div>
         </footer>
       </section>
-      <section class="entryList" ng-controller="ctrlArticles">
+      <section class="entryList">
         <ol>
           <li>
             <section class="article {$modifiers}">
@@ -235,8 +178,8 @@
       <aside></aside>
     </template>
 
-    <!--<script src="vendors/angular.min.js"></script>-->
-    <!--<script src=main.js></script>-->
+    <script src="vendors/angular.min.js"></script>
+    <script src=main.js></script>
 
   </body>
 </html>

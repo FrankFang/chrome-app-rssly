@@ -22,7 +22,23 @@ body {
         border-bottom: 1px solid @border-color;
     }
     > ol { flex: 1; overflow-y: auto; }
-    > footer { height: 4em; padding-left: 1em; border-top: 1px solid @border-color; }
+    > footer { height: 4em; border-top: 1px solid @border-color;
+        > div { height: 100%; }
+    }
+    .feed {
+        input[type=checkbox] { display: none }
+        i { display: block }
+    }
+    .add { display: block; padding-left: 1em; }
+    .remove { display: none; }
+    &.editMode {
+        .add { display: none }
+        .remove { display: block; }
+        .feed {
+            input[type=checkbox] { display: block; }
+            i { display: none; }
+        }
+    }
 }
 .entryList { }
 .preview { padding: 1em;

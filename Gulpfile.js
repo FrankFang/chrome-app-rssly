@@ -14,13 +14,14 @@ gulp.task('clean', function () {
         .pipe(clean());
 });
 
-gulp.task('debug', ['clean', 'copy', 'less', 'browserify', 'watch'])
+gulp.task('debug', ['clean', 'copy', 'less', 'browserify', 'fileinclude', 'watch'])
 
 gulp.task('copy', function () {
     return gulp
         .src([
                 APP + '**/*',
-                '!' + APP + 'main.js'
+                '!' + APP + 'main.js',
+                '!' + APP + '*.html'
         ])
         .pipe(gulp.dest(DIST))
 })
@@ -63,9 +64,14 @@ gulp.task('html', function () {
 
 gulp.task('watch', function () {
     //gulp.watch([TEST + '*'], ['html']);
-    gulp.watch([APP + '**/*', '!' + APP + 'main.js'], ['copy'])
+    gulp.watch([
+            APP + '**/*',
+            '!' + APP + 'main.js',
+            '!' + APP + '*.html'
+    ], ['copy'])
     gulp.watch([APP + '**/*.js'], ['browserify'])
     gulp.watch([APP + '**/*.less'], ['less'])
+    gulp.watch([APP + '*.html'], ['fileinclude'])
 });
 
 //gulp.task('copyNewer', function () {
@@ -73,3 +79,11 @@ gulp.task('watch', function () {
 //        .pipe(newer([APP + '**/*', '!' + APP + 'app']))
 //        .pipe(gulp.dest(DIST))
 //})
+
+var fileinclude = require('gulp-file-include');
+
+gulp.task('fileinclude', function () {
+    gulp.src([APP + '*.html'])
+        .pipe(fileinclude())
+        .pipe(gulp.dest(DIST));
+});
