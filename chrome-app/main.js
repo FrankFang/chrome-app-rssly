@@ -10,7 +10,7 @@ window.onerror = function () {
 //    id: 'a'
 //});
 
-require('./app')
+var app = require('./app')
 
 //require('./directives/focusMe')
 //require('./directives/checkChannel')

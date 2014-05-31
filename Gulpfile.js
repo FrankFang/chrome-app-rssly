@@ -32,7 +32,7 @@ gulp.task('browserify', function () {
             debug: true,
             shim: {
                 'angular': {
-                    path: 'node_modules/angular/index-browserify.js',
+                    path: 'node_modules/angular/lib/angular.min.js',
                     exports: 'angular'
                 }
             }
