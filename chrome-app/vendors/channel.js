@@ -1,4 +1,5 @@
 /* Created by frank on 14-5-18. */
+
 exports.get = function (source, cb) {
     var xhr = new XMLHttpRequest()
     xhr.onreadystatechange = function () {

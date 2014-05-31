@@ -15,7 +15,7 @@ require('./app')
 //require('./directives/focusMe')
 //require('./directives/checkChannel')
 
-//require('./channels/controller')
+require('./channels/controller')
 //require('./articles/controller')
 
 document.querySelector('.channelList').addEventListener('contextmenu', function (e) {
