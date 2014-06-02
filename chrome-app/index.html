@@ -18,7 +18,11 @@
         <h1 class="upper">Rssly</h1>
         <ol>
           <li ng-repeat="item in list track by $index">
-            @@include('./include/feed.html')
+            <section class="feed" ng-click="removeItem($index)">
+              <i><img src="{{item.icon}}"></i>
+              <input type="checkbox"/>
+              <h1>{{item.title}}{{item.icon}}</h1>
+            </section>
           </li>
         </ol>
         <footer>

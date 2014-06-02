@@ -1,26 +1,27 @@
 /* Created by frank on 14-5-19. */
 var app = require('../app.js')
-require('../articles/service.js')
 
 app.controller('ctrlChannels',
-    function ($scope, $rootScope, articleService, urlUtils) {
-        console.log("url:")
-        console.log(urlUtils)
+    function ($scope, $rootScope, $http, $timeout, url) {
 
         $scope.list = []
 
         chrome.storage.local.get(function (response) {
-            if (!response.channels) {return}
-            $scope.list = response.channels || []
-            if ($scope.list.length === 0) {
-                $scope.list.push(
+            var list = response.channels || []
+            if (list.length === 0) {
+                list.push(
                     {title: 1, url: 'http://www.ruanyifeng.com/blog/atom.xml'}
                 )
             }
-            $scope.$apply()
-            angular.forEach($scope.list, function (item) {
-
-            }, this)
+            var item = list[0]
+            var index = 0
+            $scope.getFavicon(url.getOrigin(item.url))
+                .then(function (response) {
+                    list[index].icon = response.data
+                    console.log("list[index]:")
+                    console.log(list[index])
+                    $scope.list.push(list[index])
+                })
         })
 
         $scope.newItem = ''
@@ -50,6 +51,15 @@ app.controller('ctrlChannels',
 
         $scope.toggle = function () {
             $scope.open = !$scope.open
+        }
+
+        $scope.getFavicon = function (origin) {
+            var iconSrc = origin + '/favicon.ico'
+            return $http({
+                method: 'GET',
+                url: iconSrc,
+                responseType: 'blob'
+            })
         }
 
     }

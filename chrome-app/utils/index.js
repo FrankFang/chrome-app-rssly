@@ -1,8 +1,13 @@
 /* Created by frank on 14-5-31. */
 var angular = require('angular')
-var url = require('./url')
 
 module.exports = angular.module('utils', [])
-    .factory('urlUtils', function () {
-        return url
+    .factory('url', function ($q) {
+        var self = {
+            getOrigin: function (url) {
+                var match = /^(?:https?:\/\/)?[^/]+/.exec(url)
+                return match ? match[0] : null
+            }
+        }
+        return self
     })

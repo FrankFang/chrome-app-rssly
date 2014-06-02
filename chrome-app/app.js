@@ -1,4 +1,6 @@
 var angular = require('angular')
 require('./utils')
 
-module.exports = angular.module('rssly', ['utils'])
+var app = angular.module('rssly', ['utils'])
+
+module.exports = app
