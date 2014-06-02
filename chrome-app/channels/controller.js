@@ -1,13 +1,13 @@
 /* Created by frank on 14-5-19. */
 var app = require('../app.js')
 
-app.controller('ctrlChannels',
+app.controller('ctrlFeeds',
     function ($scope, $rootScope, $http, $timeout, url, $sce) {
 
         $scope.list = []
 
         chrome.storage.local.get(function (response) {
-            var list = response.channels || []
+            var list = response.feeds || []
             if (list.length === 0) {
                 list.push({title: 1, url: 'http://www.ruanyifeng.com/blog/atom.xml'})
                 list.push({title: 2, url: 'http://www.ruanyifeng.com/blog/atom.xml'})
@@ -42,7 +42,7 @@ app.controller('ctrlChannels',
         }
 
         $scope.$watch('list', function (value) {
-            chrome.storage.local.set({'channels': value})
+            chrome.storage.local.set({'feeds': value})
         }, true)
 
         $scope.open = false

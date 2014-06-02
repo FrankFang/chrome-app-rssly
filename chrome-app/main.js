@@ -7,7 +7,7 @@ chrome.storage.local.clear()
 
 require('./app')
 
-require('./channels/controller')
+require('./feeds/controller')
 
 document.querySelector('.channelList').addEventListener('contextmenu', function (e) {
     if (this.className.indexOf('editMode') >= 0) {
