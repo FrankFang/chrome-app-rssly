@@ -19,7 +19,7 @@
         <ol>
           <li ng-repeat="item in list track by $index">
             <section class="feed" ng-click="removeItem($index)">
-              <i><img src="{{item.icon}}"></i>
+              <i><img ng-src="{{item.icon}}"></i>
               <input type="checkbox"/>
               <h1>{{item.title}}{{item.icon}}</h1>
             </section>

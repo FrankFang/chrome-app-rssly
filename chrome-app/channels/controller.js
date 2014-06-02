@@ -2,7 +2,7 @@
 var app = require('../app.js')
 
 app.controller('ctrlChannels',
-    function ($scope, $rootScope, $http, $timeout, url) {
+    function ($scope, $rootScope, $http, $timeout, url, $sce) {
 
         $scope.list = []
 
@@ -17,9 +17,7 @@ app.controller('ctrlChannels',
             var index = 0
             $scope.getFavicon(url.getOrigin(item.url))
                 .then(function (response) {
-                    list[index].icon = response.data
-                    console.log("list[index]:")
-                    console.log(list[index])
+                    list[index].icon = $sce.trustAs($sce.RESOURCE_URL, URL.createObjectURL(response.data));
                     $scope.list.push(list[index])
                 })
         })

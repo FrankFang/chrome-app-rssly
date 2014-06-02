@@ -7,7 +7,6 @@ chrome.storage.local.clear()
 
 require('./app')
 
-
 require('./channels/controller')
 
 document.querySelector('.channelList').addEventListener('contextmenu', function (e) {
