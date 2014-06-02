@@ -9,17 +9,17 @@ app.controller('ctrlChannels',
         chrome.storage.local.get(function (response) {
             var list = response.channels || []
             if (list.length === 0) {
-                list.push(
-                    {title: 1, url: 'http://www.ruanyifeng.com/blog/atom.xml'}
-                )
+                list.push({title: 1, url: 'http://www.ruanyifeng.com/blog/atom.xml'})
+                list.push({title: 2, url: 'http://www.ruanyifeng.com/blog/atom.xml'})
             }
-            var item = list[0]
-            var index = 0
-            $scope.getFavicon(url.getOrigin(item.url))
-                .then(function (response) {
-                    list[index].icon = $sce.trustAs($sce.RESOURCE_URL, URL.createObjectURL(response.data));
-                    $scope.list.push(list[index])
-                })
+
+            list.forEach(function (item, index) {
+                $scope.getFavicon(url.getOrigin(item.url))
+                    .then(function (response) {
+                        list[index].icon = $sce.trustAs($sce.RESOURCE_URL, URL.createObjectURL(response.data));
+                        $scope.list.push(list[index])
+                    })
+            })
         })
 
         $scope.newItem = ''
