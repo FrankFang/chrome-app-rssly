@@ -1,182 +1,116 @@
 <!DOCTYPE html>
 <html lang="en" data-ng-app="rssly">
-  <head>
-    <meta charset="UTF-8">
-    <title></title>
-    <link rel="stylesheet" href="styles/reset.css"/>
-    <link rel="stylesheet" href="styles/layout.css"/>
-    <link rel="stylesheet" href="styles/feed.css"/>
-    <link rel="stylesheet" href="styles/article.css"/>
-    <link rel="stylesheet" href="styles/input.css"/>
-    <link rel="stylesheet" href="styles/extendedInput.css"/>
-    <link rel="stylesheet" href="styles/button.css"/>
-    <link rel="stylesheet" href="styles/app.css"/>
-  </head>
-  <body>
-    <div class="page">
-      <section class="channelList" ng-controller="ctrlChannels">
-        <h1 class="upper">Rssly</h1>
-        <ol>
-          <li ng-repeat="item in list track by $index">
-            <section class="feed" ng-click="removeItem($index)">
-              <i><img ng-src="{{item.icon}}"></i>
-              <input type="checkbox"/>
-              <h1>{{item.title}}</h1>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <link rel="stylesheet" href="styles/reset.css"/>
+        <link rel="stylesheet" href="styles/layout.css"/>
+        <link rel="stylesheet" href="styles/feed.css"/>
+        <link rel="stylesheet" href="styles/article.css"/>
+        <link rel="stylesheet" href="styles/input.css"/>
+        <link rel="stylesheet" href="styles/extendedInput.css"/>
+        <link rel="stylesheet" href="styles/button.css"/>
+        <link rel="stylesheet" href="styles/app.css"/>
+    </head>
+    <body>
+        <div class="page">
+            <section class="channelList" ng-controller="ctrlChannels">
+                <h1 class="upper">Rssly</h1>
+                <ol>
+                    <li ng-repeat="item in list track by $index">
+                        <section class="feed">
+                            <i><img ng-src="{{item.icon}}"></i>
+                            <input type="checkbox"/>
+                            <h1>{{item.title}}</h1>
+                        </section>
+                    </li>
+                </ol>
+                <footer>
+                    <div class="add">
+                        <div class="extendedInput">
+                            <input type="text" placeholder="http://"/>
+                            <button>Add</button>
+                        </div>
+                    </div>
+                    <div class="remove">
+                        <button class="button">Remove</button>
+                    </div>
+                </footer>
             </section>
-          </li>
-        </ol>
-        <footer>
-          <div class="add">
-            <div class="extendedInput">
-              <input type="text" placeholder="http://"/>
-              <button>Add</button>
-            </div>
-          </div>
-          <div class="remove">
-            <button class="button">Remove</button>
-          </div>
-        </footer>
-      </section>
-      <section class="entryList">
-        <ol>
-          <li>
-            <section class="article {$modifiers}">
-              <time>12:34</time>
-              <h2>The Dangers of Stopping Event Propagation The Dangers of Stopping Event Propagation</h2>
+            <section class="entryList">
+                <ol>
+                    <li>
+                        <section class="article {$modifiers}">
+                            <time>12:34</time>
+                            <h2>The Dangers of Stopping Event Propagation The Dangers of Stopping Event Propagation</h2>
+                        </section>
+                    </li>
+                </ol>
             </section>
-          </li>
-          <li>
-            <section class="article {$modifiers}">
-              <time>12:34</time>
-              <h2>The Dangers of Stopping Event Propagation The Dangers of Stopping Event Propagation</h2>
+            <section class="preview">
+                <aside>
+                    <time>2014-05-23</time>
+                    <span class="author">Author</span>
+                </aside>
+                <article>
+                    <h1>男人可笑的梦想</h1>
+                    <p>去中国移动营业厅补办一张Iphone 5的sim卡，人不多，
+                        我在等待区稍微坐了5分钟。闲来无事，电视里在播一个类似
+                        达人秀一样的综艺节目，右下角的图标显示是“笑傲江湖”。
+                    <p>去中国移动营业厅补办一张Iphone 5的sim卡，人不多，
+                        我在等待区稍微坐了5分钟。闲来无事，电视里在播一个类似
+                        达人秀一样的综艺节目，右下角的图标显示是“笑傲江湖”。
+                    <p>
+                        <img src="" alt=""/>
+                    <p>就像老罗和他的锤子，给人印象最深的是认真的态度，和幽默的
+                        演绎一样。《每周一氪》也希望在传递价值的同时，也传递笑声。
+                        因为，科技本来就很有意思，不是吗？
+                    <p>就像老罗和他的锤子，给人印象最深的是认真的态度，和幽默的
+                        演绎一样。《每周一氪》也希望在传递价值的同时，也传递笑声。
+                        因为，科技本来就很有意思，不是吗？
+                    <p>就像老罗和他的锤子，给人印象最深的是认真的态度，和幽默的
+                        演绎一样。《每周一氪》也希望在传递价值的同时，也传递笑声。
+                        因为，科技本来就很有意思，不是吗？
+                    <p>就像老罗和他的锤子，给人印象最深的是认真的态度，和幽默的
+                        演绎一样。《每周一氪》也希望在传递价值的同时，也传递笑声。
+                        因为，科技本来就很有意思，不是吗？
+                    <p>就像老罗和他的锤子，给人印象最深的是认真的态度，和幽默的
+                        演绎一样。《每周一氪》也希望在传递价值的同时，也传递笑声。
+                        因为，科技本来就很有意思，不是吗？
+                    <p>就像老罗和他的锤子，给人印象最深的是认真的态度，和幽默的
+                        演绎一样。《每周一氪》也希望在传递价值的同时，也传递笑声。
+                        因为，科技本来就很有意思，不是吗？
+                    <p>就像老罗和他的锤子，给人印象最深的是认真的态度，和幽默的
+                        演绎一样。《每周一氪》也希望在传递价值的同时，也传递笑声。
+                        因为，科技本来就很有意思，不是吗？
+                    <p>就像老罗和他的锤子，给人印象最深的是认真的态度，和幽默的
+                        演绎一样。《每周一氪》也希望在传递价值的同时，也传递笑声。
+                        因为，科技本来就很有意思，不是吗？
+                </article>
             </section>
-          </li>
-          <li>
-            <section class="article {$modifiers}">
-              <time>12:34</time>
-              <h2>The Dangers of Stopping Event Propagation The Dangers of Stopping Event Propagation</h2>
-            </section>
-          </li>
-          <li>
-            <section class="article {$modifiers}">
-              <time>12:34</time>
-              <h2>The Dangers of Stopping Event Propagation The Dangers of Stopping Event Propagation</h2>
-            </section>
-          </li>
-          <li>
-            <section class="article {$modifiers}">
-              <time>12:34</time>
-              <h2>The Dangers of Stopping Event Propagation The Dangers of Stopping Event Propagation</h2>
-            </section>
-          </li>
-          <li>
-            <section class="article {$modifiers}">
-              <time>12:34</time>
-              <h2>The Dangers of Stopping Event Propagation The Dangers of Stopping Event Propagation</h2>
-            </section>
-          </li>
-          <li>
-            <section class="article {$modifiers}">
-              <time>12:34</time>
-              <h2>The Dangers of Stopping Event Propagation The Dangers of Stopping Event Propagation</h2>
-            </section>
-          </li>
-          <li>
-            <section class="article {$modifiers}">
-              <time>12:34</time>
-              <h2>The Dangers of Stopping Event Propagation The Dangers of Stopping Event Propagation</h2>
-            </section>
-          </li>
-          <li>
-            <section class="article {$modifiers}">
-              <time>12:34</time>
-              <h2>The Dangers of Stopping Event Propagation The Dangers of Stopping Event Propagation</h2>
-            </section>
-          </li>
-          <li>
-            <section class="article {$modifiers}">
-              <time>12:34</time>
-              <h2>The Dangers of Stopping Event Propagation The Dangers of Stopping Event Propagation</h2>
-            </section>
-          </li>
-          <li>
-            <section class="article {$modifiers}">
-              <time>12:34</time>
-              <h2>The Dangers of Stopping Event Propagation The Dangers of Stopping Event Propagation</h2>
-            </section>
-          </li>
-          <li>
-            <section class="article {$modifiers}">
-              <time>12:34</time>
-              <h2>The Dangers of Stopping Event Propagation The Dangers of Stopping Event Propagation</h2>
-            </section>
-          </li>
-        </ol>
-      </section>
-      <section class="preview">
-        <aside>
-          <time>2014-05-23</time>
-          <span class="author">Author</span>
-        </aside>
-        <article>
-          <h1>男人可笑的梦想</h1>
-          <p>去中国移动营业厅补办一张Iphone 5的sim卡，人不多，
-            我在等待区稍微坐了5分钟。闲来无事，电视里在播一个类似
-            达人秀一样的综艺节目，右下角的图标显示是“笑傲江湖”。
-          <p>去中国移动营业厅补办一张Iphone 5的sim卡，人不多，
-            我在等待区稍微坐了5分钟。闲来无事，电视里在播一个类似
-            达人秀一样的综艺节目，右下角的图标显示是“笑傲江湖”。
-          <p>
-            <img src="" alt=""/>
-          <p>就像老罗和他的锤子，给人印象最深的是认真的态度，和幽默的
-            演绎一样。《每周一氪》也希望在传递价值的同时，也传递笑声。
-            因为，科技本来就很有意思，不是吗？
-          <p>就像老罗和他的锤子，给人印象最深的是认真的态度，和幽默的
-            演绎一样。《每周一氪》也希望在传递价值的同时，也传递笑声。
-            因为，科技本来就很有意思，不是吗？
-          <p>就像老罗和他的锤子，给人印象最深的是认真的态度，和幽默的
-            演绎一样。《每周一氪》也希望在传递价值的同时，也传递笑声。
-            因为，科技本来就很有意思，不是吗？
-          <p>就像老罗和他的锤子，给人印象最深的是认真的态度，和幽默的
-            演绎一样。《每周一氪》也希望在传递价值的同时，也传递笑声。
-            因为，科技本来就很有意思，不是吗？
-          <p>就像老罗和他的锤子，给人印象最深的是认真的态度，和幽默的
-            演绎一样。《每周一氪》也希望在传递价值的同时，也传递笑声。
-            因为，科技本来就很有意思，不是吗？
-          <p>就像老罗和他的锤子，给人印象最深的是认真的态度，和幽默的
-            演绎一样。《每周一氪》也希望在传递价值的同时，也传递笑声。
-            因为，科技本来就很有意思，不是吗？
-          <p>就像老罗和他的锤子，给人印象最深的是认真的态度，和幽默的
-            演绎一样。《每周一氪》也希望在传递价值的同时，也传递笑声。
-            因为，科技本来就很有意思，不是吗？
-          <p>就像老罗和他的锤子，给人印象最深的是认真的态度，和幽默的
-            演绎一样。《每周一氪》也希望在传递价值的同时，也传递笑声。
-            因为，科技本来就很有意思，不是吗？
-        </article>
-      </section>
-    </div>
+        </div>
 
 
-    <template id="channel">
+        <template id="channel">
 
-      <hgroup>
-        <h1>title</h1>
-        <h2>description</h2>
-      </hgroup>
+            <hgroup>
+                <h1>title</h1>
+                <h2>description</h2>
+            </hgroup>
 
-    </template>
+        </template>
 
-    <template id="entry">
-      <a class="link" href="#" target="_blank">
-        <h1>title</h1>
-      </a>
-      <span class="author"></span>
-      <time>publishDate</time>
-      <article></article>
-      <aside></aside>
-    </template>
+        <template id="entry">
+            <a class="link" href="#" target="_blank">
+                <h1>title</h1>
+            </a>
+            <span class="author"></span>
+            <time>publishDate</time>
+            <article></article>
+            <aside></aside>
+        </template>
 
-    <script src=main.js></script>
+        <script src=main.js></script>
 
-  </body>
+    </body>
 </html>
