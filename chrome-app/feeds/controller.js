@@ -2,9 +2,11 @@
 var app = require('../app.js')
 
 app.controller('ctrlFeeds',
-    function ($scope, $rootScope, $http, $timeout, url, $sce) {
+    function ($scope, $rootScope, $http, $timeout, urlUtils, $sce) {
 
         $scope.list = []
+        $scope.list.push({title: 1, url: 'http://www.ruanyifeng.com/blog/atom.xml'})
+        $scope.list.push({title: 2, url: 'http://www.ruanyifeng.com/blog/atom.xml'})
 
         chrome.storage.local.get(function (response) {
             var list = response.feeds || []
@@ -14,11 +16,11 @@ app.controller('ctrlFeeds',
             }
 
             list.forEach(function (item, index) {
-                $scope.getFavicon(url.getOrigin(item.url))
-                    .then(function (response) {
-                        list[index].icon = $sce.trustAs($sce.RESOURCE_URL, URL.createObjectURL(response.data));
-                        $scope.list.push(list[index])
-                    })
+//                $scope.getFavicon(urlUtils.getOrigin(item.url))
+//                    .then(function (response) {
+//                        list[index].icon = $sce.trustAs($sce.RESOURCE_URL, URL.createObjectURL(response.data));
+//                        $scope.list.push(list[index])
+//                    })
             })
         })
 

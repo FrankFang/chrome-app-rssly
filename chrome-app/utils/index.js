@@ -2,7 +2,7 @@
 var angular = require('angular')
 
 module.exports = angular.module('utils', [])
-    .factory('url', function ($q) {
+    .factory('urlUtils', function ($q) {
         var self = {
             getOrigin: function (url) {
                 var match = /^(?:https?:\/\/)?[^/]+/.exec(url)

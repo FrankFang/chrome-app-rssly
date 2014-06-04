@@ -18,11 +18,7 @@
                 <h1 class="upper">Rssly</h1>
                 <ol>
                     <li ng-repeat="item in list track by $index">
-                        <section class="feed">
-                            <i><img ng-src="{{item.icon}}"></i>
-                            <input type="checkbox"/>
-                            <h1>{{item.title}}</h1>
-                        </section>
+                        <my-feed data-url="{{item.url}}"></my-feed>
                     </li>
                 </ol>
                 <footer>
