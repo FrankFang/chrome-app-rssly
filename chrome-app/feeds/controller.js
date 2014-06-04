@@ -5,34 +5,15 @@ app.controller('ctrlFeeds',
     function ($scope, $rootScope, $http, $timeout, urlUtils, $sce) {
 
         $scope.list = []
-        $scope.list.push({title: 1, url: 'http://www.ruanyifeng.com/blog/atom.xml'})
-        $scope.list.push({title: 2, url: 'http://www.ruanyifeng.com/blog/atom.xml'})
 
         chrome.storage.local.get(function (response) {
-            var list = response.feeds || []
-            if (list.length === 0) {
-                list.push({title: 1, url: 'http://www.ruanyifeng.com/blog/atom.xml'})
-                list.push({title: 2, url: 'http://www.ruanyifeng.com/blog/atom.xml'})
-            }
-
-            list.forEach(function (item, index) {
-//                $scope.getFavicon(urlUtils.getOrigin(item.url))
-//                    .then(function (response) {
-//                        list[index].icon = $sce.trustAs($sce.RESOURCE_URL, URL.createObjectURL(response.data));
-//                        $scope.list.push(list[index])
-//                    })
-            })
+//            var list = response.feeds || []
         })
 
-        $scope.newItem = ''
+        $scope.newFeed = ''
 
-        $scope.addItem = function () {
-            if ($scope.newItem === undefined) { return }
-            var newItem = $scope.newItem.trim()
-            if (newItem === '') {return}
-            $scope.list.push({url: newItem})
-            $rootScope.$broadcast('query:channel', $scope.newItem)
-            $scope.newItem = ''
+        $scope.addFeed = function () {
+            $scope.list.push({url: $scope.newFeed})
         }
 
         $scope.expendItem = function () {
