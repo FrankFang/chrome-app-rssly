@@ -10,16 +10,7 @@ module.exports = app.directive(
             templateUrl: 'feeds/template.html',
             link: function ($scope, $element, $attrs) {
                 var url = $attrs.url
-                var origin = urlUtils.getOrigin(url)
-                var iconSrc = origin + '/favicon.ico'
-                $http({
-                    method: 'GET',
-                    url: iconSrc,
-                    responseType: 'blob'
-                })
-                    .then(function (response) {
-                        $scope.item.icon = $sce.trustAs($sce.RESOURCE_URL, URL.createObjectURL(response.data));
-                    })
+
                 $scope.item.status = 'loading'
                 $http.get('https://ajax.googleapis.com/ajax/services/feed/load?v=2.0&num=0&q=' + encodeURIComponent(url))
                     .success(function (data) {
@@ -28,6 +19,15 @@ module.exports = app.directive(
                     })
                     .error(function () {
                         $scope.item.status = 'error'
+                    })
+
+
+                var origin = urlUtils.getOrigin(url)
+                var iconSrc = origin + '/favicon.ico'
+
+                $http({ method: 'GET', url: iconSrc, responseType: 'blob' })
+                    .success(function (data) {
+                        $scope.item.icon = $sce.trustAs($sce.RESOURCE_URL, URL.createObjectURL(data));
                     })
             }
         }

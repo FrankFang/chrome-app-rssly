@@ -58,5 +58,22 @@
     &.mute { color: @mute-color; }
     &.highlight { color: @dark-color; }
 
+    &.loading {
+        > i {
+            &:before {
+                position: absolute;
+                @width: 100%;
+                content: ' ';
+                width: @width;
+                height: @width;
+                border-radius: @width;
+                display: block;
+                border: 1px solid #DDD;
+                border-color: transparent transparent transparent blue;
+                -webkit-animation: spin 0.8s linear infinite;
+            }
+        }
+    }
+
 }
 

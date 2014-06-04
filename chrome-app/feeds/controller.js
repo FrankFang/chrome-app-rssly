@@ -5,6 +5,7 @@ app.controller('ctrlFeeds',
     function ($scope, $rootScope, $http, $timeout, urlUtils, $sce) {
 
         $scope.list = []
+        $scope.list.push({url: 'http://www.ruanyifeng.com/blog/atom.xml'})
 
         chrome.storage.local.get(function (response) {
 //            var list = response.feeds || []
@@ -13,7 +14,14 @@ app.controller('ctrlFeeds',
         $scope.newFeed = ''
 
         $scope.addFeed = function () {
-            $scope.list.push({url: $scope.newFeed})
+            var exist = false
+            for (var i = 0, length = $scope.list.length; i < length; i += 1) {
+                if ($scope.newFeed === $scope.list[i].url) {
+                    exist = true
+                    break
+                }
+            }
+            if (!exist) { $scope.list.push({url: $scope.newFeed}) }
         }
 
         $scope.expendItem = function () {

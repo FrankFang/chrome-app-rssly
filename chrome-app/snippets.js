@@ -3,6 +3,7 @@
 var channel = require('./vendors/channel')
 
 //var source = 'http://www.ruanyifeng.com/blog/atom.xml'
+// http://coolshell.cn/feed
 
 
 function onGetFeed(error, feed) {

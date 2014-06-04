@@ -3,9 +3,13 @@ body {
     -webkit-app-region: drag;
 }
 
+@-webkit-keyframes spin {
+    from {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
 .relative { position: relative; }
-.loading { background: yellow; }
-.error { background: red; }
 .upper { text-transform: uppercase; }
 
 .page {
