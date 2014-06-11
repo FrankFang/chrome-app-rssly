@@ -46,13 +46,13 @@ function onGetFeed(error, feed) {
 //    scope.$apply(model.assign(scope, false));
 
 
-
-// scope: true,    // optionally create a child scope
-// link: ...
-<li ng-repeat="item in list track by $index">
-    <section class="feed">
-        <i><img ng-src="{{item.icon}}"></i>
-            <input type="checkbox"/>
-            <h1>{{item.title}}</h1>
-        </section>
-    </li>
+//            link: function (scope, element, attrs) {
+//                var model = $parse(attrs.focusMe);
+//                scope.$watch(model, function (value) {
+//                    if (value === true) {
+//                        $timeout(function () {
+//                            element[0].focus();
+//                        });
+//                    }
+//                })
+//            }

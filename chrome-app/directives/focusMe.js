@@ -5,12 +5,12 @@ module.exports = app.directive(
     'focusMe',
     function ($timeout, $parse) {
         return {
-            link: function (scope, element, attrs) {
-                var model = $parse(attrs.focusMe);
-                scope.$watch(model, function (value) {
-                    if (value === true) {
+            link: function ($scope, $element, $attrs) {
+                var toggle = $attrs.focusMe
+                $scope.$watch(toggle, function (value) {
+                    if (value) {
                         $timeout(function () {
-                            element[0].focus();
+                            $element[0].focus()
                         });
                     }
                 })

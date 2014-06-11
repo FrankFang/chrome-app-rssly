@@ -24,15 +24,19 @@
                 <footer>
                     <div class="add">
                         <div class="extendedInput">
-                            <input type="text" placeholder="http://" ng-model="newFeed"/>
+                            <input type="text" placeholder="http://"
+                                   ng-model="newFeed"
+                                   ng-focus="onFocus()"
+                                   focus-me="focusAdd"
+                                />
                             <button data-ng-click="addFeed()">Add</button>
                         </div>
                     </div>
                     <div class="remove">
                         <button class="button">Remove</button>
                     </div>
-                    <div class="poptip">
-                        <p>sdaldjkaljdlakjds slkdjslj lsj lksj lksj lksj </p>
+                    <div class="poptip" ng-show="error">
+                        <p>{{error}}</p>
                     </div>
                 </footer>
             </section>

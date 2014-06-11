@@ -11,7 +11,12 @@ app.controller('ctrlFeeds',
 //            var list = response.feeds || []
         })
 
+        $scope.focusAdd = false
         $scope.newFeed = ''
+
+        $scope.onFocus = function () {
+            $scope.error = ''
+        }
 
         $scope.addFeed = function () {
             var exist = false
@@ -21,11 +26,13 @@ app.controller('ctrlFeeds',
                     break
                 }
             }
-            if (!exist) { $scope.list.push({url: $scope.newFeed}) }
-        }
-
-        $scope.expendItem = function () {
-            $scope.expend = !$scope.expend
+            if (!exist) {
+                $scope.list.push({url: $scope.newFeed})
+            } else {
+                $scope.error = 'Already subscribed'
+            }
+            $scope.newFeed = ''
+            $scope.focusAdd = true
         }
 
         $scope.removeItem = function (index) {
@@ -35,21 +42,6 @@ app.controller('ctrlFeeds',
         $scope.$watch('list', function (value) {
             chrome.storage.local.set({'feeds': value})
         }, true)
-
-        $scope.open = false
-
-        $scope.toggle = function () {
-            $scope.open = !$scope.open
-        }
-
-        $scope.getFavicon = function (origin) {
-            var iconSrc = origin + '/favicon.ico'
-            return $http({
-                method: 'GET',
-                url: iconSrc,
-                responseType: 'blob'
-            })
-        }
 
     }
 )
