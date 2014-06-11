@@ -42,6 +42,7 @@ function onGetFeed(error, feed) {
 }
 
 
+//chrome.storage.local.clear()
 
 //    scope.$apply(model.assign(scope, false));
 

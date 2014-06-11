@@ -8,14 +8,20 @@ app.controller('ctrlFeeds',
         $scope.list.push({url: 'http://www.ruanyifeng.com/blog/atom.xml'})
 
         chrome.storage.local.get(function (response) {
+            console.log("response:")
+            console.log(response)
 //            var list = response.feeds || []
         })
 
         $scope.focusAdd = false
         $scope.newFeed = ''
 
-        $scope.onFocus = function () {
-            $scope.error = ''
+        $scope.showPoptip = false
+
+        $scope.$watch('error', function (value) { if (value) { $scope.showPoptip = true } })
+
+        $scope.onBlur = function () {
+            $scope.showPoptip = false
         }
 
         $scope.addFeed = function () {

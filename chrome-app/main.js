@@ -3,7 +3,6 @@ window.onerror = function () {
     document.body.style.display = 'none'
 }
 
-chrome.storage.local.clear()
 
 require('./app')
 

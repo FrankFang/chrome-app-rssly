@@ -26,7 +26,7 @@
                         <div class="extendedInput">
                             <input type="text" placeholder="http://"
                                    ng-model="newFeed"
-                                   ng-focus="onFocus()"
+                                   ng-blur="onBlur()"
                                    focus-me="focusAdd"
                                 />
                             <button data-ng-click="addFeed()">Add</button>
@@ -35,7 +35,7 @@
                     <div class="remove">
                         <button class="button">Remove</button>
                     </div>
-                    <div class="poptip" ng-show="error">
+                    <div class="poptip" ng-show="showPoptip">
                         <p>{{error}}</p>
                     </div>
                 </footer>
