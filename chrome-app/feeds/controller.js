@@ -5,12 +5,13 @@ app.controller('ctrlFeeds',
     function ($scope, $rootScope, $http, $timeout, urlUtils, $sce) {
 
         $scope.list = []
-        $scope.list.push({url: 'http://www.ruanyifeng.com/blog/atom.xml'})
 
         chrome.storage.local.get(function (response) {
-            console.log("response:")
-            console.log(response)
-//            var list = response.feeds || []
+            $scope.list = response.feeds || []
+            if ($scope.list.length === 0) {
+                $scope.list.push({url: 'http://www.ruanyifeng.com/blog/atom.xml'})
+            }
+//            $scope.$apply()
         })
 
         $scope.focusAdd = false

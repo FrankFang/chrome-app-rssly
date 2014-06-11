@@ -8,27 +8,33 @@ module.exports = app.directive(
             restrict: 'E',
             scope: true,
             templateUrl: 'feeds/template.html',
-            link: function ($scope, $element, $attrs) {
-                var url = $attrs.url
+            link: {
+                pre: function ($scope) {
+                    $scope.item.icon = ''
+                },
+                post: function ($scope, $element, $attrs) {
+                    var url = $attrs.url
 
-                $scope.item.status = 'loading'
-                $http.get('https://ajax.googleapis.com/ajax/services/feed/load?v=2.0&num=0&q=' + encodeURIComponent(url))
-                    .success(function (data) {
-                        $scope.item.status = 'success'
-                        $scope.item.title = data.responseData.feed.title
-                    })
-                    .error(function () {
-                        $scope.item.status = 'error'
-                    })
+                    $scope.item.status = 'loading'
+                    $http.get('https://ajax.googleapis.com/ajax/services/feed/load?v=2.0&num=0&q=' + encodeURIComponent(url))
+                        .success(function (data) {
+                            $scope.item.status = 'success'
+                            $scope.item.title = data.responseData.feed.title
+                        })
+                        .error(function () {
+                            $scope.item.status = 'error'
+                        })
 
 
-                var origin = urlUtils.getOrigin(url)
-                var iconSrc = origin + '/favicon.ico'
+                    var origin = urlUtils.getOrigin(url)
+                    var iconSrc = origin + '/favicon.ico'
 
-                $http({ method: 'GET', url: iconSrc, responseType: 'blob' })
-                    .success(function (data) {
-                        $scope.item.icon = $sce.trustAs($sce.RESOURCE_URL, URL.createObjectURL(data));
-                    })
+                    $http({ method: 'GET', url: iconSrc, responseType: 'blob' })
+                        .success(function (data) {
+                            $scope.item.iconData = data
+                            $scope.item.icon = $sce.trustAs($sce.RESOURCE_URL, URL.createObjectURL(data));
+                        })
+                }
             }
         }
     }
