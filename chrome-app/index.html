@@ -40,49 +40,16 @@
             <section class="entryList" ng-controller="ctrlArticles">
                 <ol>
                     <li ng-repeat="article in articles track by $index">
-                        <ff-article data-item="article" data-url="{{article.url}}"></ff-article>
+                        <ff-article ng-click="openArticle($index)"></ff-article>
                     </li>
                 </ol>
             </section>
-            <section class="preview">
+            <section class="preview" ng-controller="ctrlPreview">
                 <aside>
-                    <time>2014-05-23</time>
-                    <span class="author">Author</span>
+                    <time>{{publishedDate}}</time>
+                    <span class="author">{{author}}</span>
                 </aside>
-                <article>
-                    <h1>男人可笑的梦想</h1>
-                    <p>去中国移动营业厅补办一张Iphone 5的sim卡，人不多，
-                        我在等待区稍微坐了5分钟。闲来无事，电视里在播一个类似
-                        达人秀一样的综艺节目，右下角的图标显示是“笑傲江湖”。
-                    <p>去中国移动营业厅补办一张Iphone 5的sim卡，人不多，
-                        我在等待区稍微坐了5分钟。闲来无事，电视里在播一个类似
-                        达人秀一样的综艺节目，右下角的图标显示是“笑傲江湖”。
-                    <p>
-                        <img src="" alt=""/>
-                    <p>就像老罗和他的锤子，给人印象最深的是认真的态度，和幽默的
-                        演绎一样。《每周一氪》也希望在传递价值的同时，也传递笑声。
-                        因为，科技本来就很有意思，不是吗？
-                    <p>就像老罗和他的锤子，给人印象最深的是认真的态度，和幽默的
-                        演绎一样。《每周一氪》也希望在传递价值的同时，也传递笑声。
-                        因为，科技本来就很有意思，不是吗？
-                    <p>就像老罗和他的锤子，给人印象最深的是认真的态度，和幽默的
-                        演绎一样。《每周一氪》也希望在传递价值的同时，也传递笑声。
-                        因为，科技本来就很有意思，不是吗？
-                    <p>就像老罗和他的锤子，给人印象最深的是认真的态度，和幽默的
-                        演绎一样。《每周一氪》也希望在传递价值的同时，也传递笑声。
-                        因为，科技本来就很有意思，不是吗？
-                    <p>就像老罗和他的锤子，给人印象最深的是认真的态度，和幽默的
-                        演绎一样。《每周一氪》也希望在传递价值的同时，也传递笑声。
-                        因为，科技本来就很有意思，不是吗？
-                    <p>就像老罗和他的锤子，给人印象最深的是认真的态度，和幽默的
-                        演绎一样。《每周一氪》也希望在传递价值的同时，也传递笑声。
-                        因为，科技本来就很有意思，不是吗？
-                    <p>就像老罗和他的锤子，给人印象最深的是认真的态度，和幽默的
-                        演绎一样。《每周一氪》也希望在传递价值的同时，也传递笑声。
-                        因为，科技本来就很有意思，不是吗？
-                    <p>就像老罗和他的锤子，给人印象最深的是认真的态度，和幽默的
-                        演绎一样。《每周一氪》也希望在传递价值的同时，也传递笑声。
-                        因为，科技本来就很有意思，不是吗？
+                <article ng-bind-html="content">
                 </article>
             </section>
         </div>

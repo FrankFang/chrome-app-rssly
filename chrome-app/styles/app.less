@@ -11,6 +11,12 @@ body {
 
 .relative { position: relative; }
 .upper { text-transform: uppercase; }
+.clearfix {
+    &:after {
+        content: ' ';
+        clear: both;
+    }
+}
 
 .page {
     > section { position: relative;
@@ -40,9 +46,11 @@ body {
     }
     .add { display: block; padding-left: 1em; }
 }
+
 .entryList { }
+
 .preview { padding: 1em;
-    > aside {
+    > aside { .clearfix;
         > time { }
         > .author { float: right; }
     }

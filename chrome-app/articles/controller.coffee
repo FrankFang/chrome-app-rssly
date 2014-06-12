@@ -3,7 +3,7 @@
 app = require('../app.js')
 require('../services/feed')
 
-app.controller('ctrlArticles', ($scope, feedService, $timeout) ->
+app.controller 'ctrlArticles', ($scope, feedService, $rootScope) ->
   $scope.articles = []
   $scope.$on('openFeed', (event, data) ->
     url = data.url
@@ -14,4 +14,3 @@ app.controller('ctrlArticles', ($scope, feedService, $timeout) ->
 
   $scope.openArticle = (index)->
     $rootScope.$broadcast 'openArticle', $scope.articles[index]
-)
