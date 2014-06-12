@@ -2,7 +2,7 @@
 var app = require('../app')
 
 module.exports = app.directive(
-    'focusMe',
+    'ff-focusable',
     function ($timeout, $parse) {
         return {
             link: function ($scope, $element, $attrs) {

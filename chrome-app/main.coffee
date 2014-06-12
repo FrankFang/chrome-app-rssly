@@ -2,11 +2,11 @@
 window.onerror = () ->
   document.body.style.display = 'none'
 
-
 require './app'
 
 require './feeds/controller'
 require './feeds/directive'
-require './directives/focusMe'
+require './directives/focusable'
+require './directives/draggable'
 
 

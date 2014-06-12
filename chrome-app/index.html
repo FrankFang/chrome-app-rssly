@@ -27,13 +27,10 @@
                             <input type="text" placeholder="http://"
                                    ng-model="newFeed"
                                    ng-blur="onBlur()"
-                                   focus-me="focusAdd"
+                                   ff-focusable="focusAdd"
                                 />
                             <button data-ng-click="addFeed()">Add</button>
                         </div>
-                    </div>
-                    <div class="remove">
-                        <button class="button">Remove</button>
                     </div>
                     <div class="poptip" ng-show="showPoptip">
                         <p>{{error}}</p>
