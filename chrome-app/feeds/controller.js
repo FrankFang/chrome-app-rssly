@@ -24,6 +24,10 @@ app.controller('ctrlFeeds',
             $scope.showPoptip = false
         }
 
+        $scope.openFeed = function (index) {
+            $rootScope.$broadcast('foo', $scope.list[index])
+        }
+
         $scope.addFeed = function () {
             var exist = false
             for (var i = 0, length = $scope.list.length; i < length; i += 1) {

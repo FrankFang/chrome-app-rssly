@@ -6,6 +6,8 @@ require './app'
 
 require './feeds/controller'
 require './feeds/directive'
+require './articles/controller'
+require './articles/directive'
 require './directives/focusable'
 require './directives/draggable'
 

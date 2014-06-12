@@ -1,7 +1,7 @@
 /* Created by frank on 14-5-21. */
 var app = require('../app')
 
-app.factory('articleService', function ($http, $q) {
+app.factory('feedService', function ($http, $q) {
     var url = 'https://ajax.googleapis.com/ajax/services/feed/load'
     return {
         get: function (source, number) {

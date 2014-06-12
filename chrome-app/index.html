@@ -2,7 +2,7 @@
 <html lang="en" data-ng-app="rssly">
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>Title</title>
         <link rel="stylesheet" href="styles/reset.css"/>
         <link rel="stylesheet" href="styles/layout.css"/>
         <link rel="stylesheet" href="styles/feed.css"/>
@@ -18,16 +18,16 @@
                 <h1 class="upper">Rssly</h1>
                 <ol>
                     <li ng-repeat="item in list track by $index">
-                        <my-feed data-url="{{item.url}}"></my-feed>
+                        <my-feed data-url="{{item.url}}" ng-click="openFeed($index)"></my-feed>
                     </li>
                 </ol>
                 <footer>
                     <div class="add">
                         <div class="extendedInput">
                             <input type="text" placeholder="http://"
-                                   ng-model="newFeed"
-                                   ng-blur="onBlur()"
-                                   ff-focusable="focusAdd"
+                                ng-model="newFeed"
+                                ng-blur="onBlur()"
+                                ff-focusable="focusAdd"
                                 />
                             <button data-ng-click="addFeed()">Add</button>
                         </div>
@@ -37,13 +37,10 @@
                     </div>
                 </footer>
             </section>
-            <section class="entryList">
+            <section class="entryList" ng-controller="ctrlArticles">
                 <ol>
-                    <li>
-                        <section class="article">
-                            <time>12:34</time>
-                            <h2>The Dangers of Stopping Event Propagation The Dangers of Stopping Event Propagation</h2>
-                        </section>
+                    <li ng-repeat="article in articles track by $index">
+                        <ff-article data-item="article" data-url="{{article.url}}"></ff-article>
                     </li>
                 </ol>
             </section>
