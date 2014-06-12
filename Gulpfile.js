@@ -27,21 +27,18 @@ gulp.task('copy', function () {
         .pipe(gulp.dest(DIST))
 })
 
+var rename = require('gulp-rename')
+
 gulp.task('browserify', function () {
-    return gulp.src(APP + 'main.js')
+    return gulp.src(APP + 'main.{js,coffee}', {read: false})
         .pipe(browserify({
             debug: true,
-            shim: {
-//                'angular': {
-//                    path: 'node_modules/angular/lib/angular.min.js',
-//                    exports: 'angular'
-//                }
-            },
             transform: ['coffeeify'],
             extensions: ['.coffee'],
             noParse: 'node_modules/angular/lib/angular.min.js',
             detectGlobals: false
         }))
+        .pipe(rename('main.js'))
         .pipe(gulp.dest(DIST))
 });
 
