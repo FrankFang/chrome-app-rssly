@@ -1,3 +1,4 @@
+/* jshint node:true */
 var TEST = 'test/'
 var DIST = 'dist/'
 var APP = 'chrome-app/'
@@ -31,11 +32,15 @@ gulp.task('browserify', function () {
         .pipe(browserify({
             debug: true,
             shim: {
-                'angular': {
-                    path: 'node_modules/angular/lib/angular.min.js',
-                    exports: 'angular'
-                }
-            }
+//                'angular': {
+//                    path: 'node_modules/angular/lib/angular.min.js',
+//                    exports: 'angular'
+//                }
+            },
+            transform: ['coffeeify'],
+            extensions: ['.coffee'],
+            noParse: 'node_modules/angular/lib/angular.min.js',
+            detectGlobals: false
         }))
         .pipe(gulp.dest(DIST))
 });
@@ -69,7 +74,7 @@ gulp.task('watch', function () {
             '!' + APP + 'main.js',
             '!' + APP + '*.html'
     ], ['copy'])
-    gulp.watch([APP + '**/*.js'], ['browserify'])
+    gulp.watch([APP + '**/*.{js,coffee}'], ['browserify'])
     gulp.watch([APP + '**/*.less'], ['less'])
     gulp.watch([APP + '*.html'], ['fileinclude'])
 });

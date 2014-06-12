@@ -10,6 +10,7 @@ module.exports = app.directive(
             templateUrl: 'feeds/template.html',
             link: {
                 pre: function ($scope) {
+                    // The icon is strange object
                     $scope.item.icon = ''
                 },
                 post: function ($scope, $element, $attrs) {
