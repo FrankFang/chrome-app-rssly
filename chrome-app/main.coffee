@@ -9,14 +9,4 @@ require './feeds/controller'
 require './feeds/directive'
 require './directives/focusMe'
 
-document
-.querySelector('.channelList')
-.addEventListener('contextmenu', (e) ->
-  if (this.className.indexOf('editMode') >= 0)
-    this.className = 'channelList'
-  else
-    this.className = 'channelList editMode'
-)
-
-console.log 'hi'
 

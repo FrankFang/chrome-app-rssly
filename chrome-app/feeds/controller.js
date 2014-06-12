@@ -11,7 +11,6 @@ app.controller('ctrlFeeds',
             if ($scope.list.length === 0) {
                 $scope.list.push({url: 'http://www.ruanyifeng.com/blog/atom.xml'})
             }
-//            $scope.$apply()
         })
 
         $scope.focusAdd = false

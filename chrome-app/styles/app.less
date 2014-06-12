@@ -28,7 +28,8 @@ body {
     > ol { flex: 1; overflow-y: auto; }
     > footer { height: 4em; border-top: 1px solid @border-color; position: relative;
         > div { height: 100%; }
-        .poptip { position: absolute; bottom: 100%; width: 80%; margin: 0 auto 0.5rem; left: 0; right: 0; text-align: center; background: white; border: 1px solid @border-color; display: table;
+        .poptip { position: absolute; bottom: 100%; width: 80%; margin: 0 auto 0.5rem; left: 0; right: 0; text-align: center;
+            background: white; border: 1px solid @border-color; display: table;
             &:before, &:after { content: ' '; position: absolute; top: 100%; border: 0.5rem solid transparent;
                 left: 0; right: 0; margin: -1px auto 0; width: 0; height: 0;
                 border-top-color: white;
@@ -37,20 +38,7 @@ body {
             p { display: table-cell; vertical-align: middle; }
         }
     }
-    .feed {
-        input[type=checkbox] { display: none }
-        i { display: block }
-    }
     .add { display: block; padding-left: 1em; }
-    .remove { display: none; }
-    &.editMode {
-        .add { display: none }
-        .remove { display: block; }
-        .feed {
-            input[type=checkbox] { display: block; }
-            i { display: none; }
-        }
-    }
 }
 .entryList { }
 .preview { padding: 1em;
