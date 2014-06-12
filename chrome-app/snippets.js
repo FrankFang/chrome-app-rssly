@@ -57,3 +57,18 @@ function onGetFeed(error, feed) {
 //                    }
 //                })
 //            }
+
+
+var images = li.querySelectorAll('img')
+images = Array.prototype.slice.call(images, 0)
+images.forEach(function (image) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', image.src, true);
+    xhr.responseType = 'blob';
+    xhr.onload = function (e) {
+        image.src = window.URL.createObjectURL(this.response);
+    };
+
+    xhr.send();
+})
+
