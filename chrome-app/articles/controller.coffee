@@ -5,10 +5,13 @@ require('../services/feed')
 
 app.controller('ctrlArticles', ($scope, feedService, $timeout) ->
   $scope.articles = []
-  $scope.$on('foo', (event, data) ->
+  $scope.$on('openFeed', (event, data) ->
     url = data.url
     feedService.get(url).success (response) ->
       list = response?.responseData?.feed?.entries
       $scope.articles = list if list
   )
+
+  $scope.openArticle = (index)->
+    $rootScope.$broadcast 'openArticle', $scope.articles[index]
 )

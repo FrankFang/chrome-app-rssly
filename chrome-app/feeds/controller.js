@@ -25,7 +25,7 @@ app.controller('ctrlFeeds',
         }
 
         $scope.openFeed = function (index) {
-            $rootScope.$broadcast('foo', $scope.list[index])
+            $rootScope.$broadcast('openFeed', $scope.list[index])
         }
 
         $scope.addFeed = function () {
