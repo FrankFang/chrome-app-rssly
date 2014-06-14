@@ -5,18 +5,16 @@ module.exports = app.directive(
     'myFeed',
     function ($timeout, $parse, urlUtils, $http, $sce) {
         return {
-            restrict: 'E',
-            scope: true,
+            restrict: 'EA',
+            scope: {
+                item: '=source'
+            },
             templateUrl: 'feeds/template.html',
             link: {
-                pre: function ($scope) {
-                    // The icon is strange object
-                    $scope.item.icon = ''
-                },
                 post: function ($scope, $element, $attrs) {
-                    var url = $attrs.url
 
-                    $scope.item.status = 'loading'
+                    var url = $scope.item.url
+
                     $http.get('https://ajax.googleapis.com/ajax/services/feed/load?v=2.0&num=0&q=' + encodeURIComponent(url))
                         .success(function (data) {
                             $scope.item.status = 'success'
@@ -35,6 +33,7 @@ module.exports = app.directive(
                             $scope.item.iconData = data
                             $scope.item.icon = $sce.trustAs($sce.RESOURCE_URL, URL.createObjectURL(data));
                         })
+
                 }
             }
         }

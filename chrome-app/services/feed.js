@@ -8,7 +8,7 @@ app.factory('feedService', function ($http, $q) {
             var params = {
                 v: '2.0',
                 q: source,
-                num: number
+                num: number || 20
             }
             return $http.get(url, {params: params})
         },
