@@ -1,6 +1,6 @@
 ## Created by frank on 14-5-20.
 
-app = require('../app.js')
+app = require('../app')
 require('../services/feed')
 
 app.controller 'ctrlArticles', ($scope, feedService, $rootScope) ->

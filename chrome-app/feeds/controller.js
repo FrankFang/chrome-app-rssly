@@ -1,5 +1,5 @@
 /* Created by frank on 14-5-19. */
-var app = require('../app.js')
+var app = require('../app')
 
 app.controller('ctrlFeeds',
     function ($scope, $rootScope, $http, $timeout, urlUtils, $sce) {

@@ -14,12 +14,16 @@ replace = ($element)->
     xhr.send()
 
 module.exports = app.directive 'ffImageReplacer', ->
+
+  scope:
+    content: '=ffImageReplacer'
   link: ($scope, $element, $attrs) ->
-    unregister = $scope.$watch (
-      ->$element.find('img').length
-    ), (
-      (newValue)->
-        replace($element)
-    )
+
+    unregister = $scope.$watch 'content', ->
+      replace($element)
+      console.log 1
+
+#    $scope.$on '$destroy', ->
+#      unregister()
 
 
