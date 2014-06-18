@@ -17,7 +17,7 @@
             <section class="channelList" ng-controller="ctrlFeeds">
                 <h1 class="upper">Rssly</h1>
                 <ol>
-                    <li ng-repeat="item in list track by $index" >
+                    <li ng-repeat="item in list track by $index">
                         <my-feed source="item" ng-click="openFeed($index)"></my-feed>
                     </li>
                 </ol>
@@ -49,7 +49,7 @@
                     <time>{{publishedDate}}</time>
                     <span class="author">{{author}}</span>
                 </aside>
-                <article ng-bind-html="content" ff-image-replacer="content">
+                <article ng-bind-html="content | ffReplaceImages" ff-image-replacer="content">
                 </article>
             </section>
         </div>

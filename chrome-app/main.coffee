@@ -15,3 +15,5 @@ require './preview/controller'
 require './directives/focusable'
 require './directives/draggable'
 require './directives/image-replacer'
+
+require './filters/replaceImages'
