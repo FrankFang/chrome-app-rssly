@@ -9,7 +9,6 @@ replace = ($element)->
     xhr.open 'GET', image.getAttribute('data-src'), true
     xhr.responseType = 'blob'
     xhr.onload = (e) ->
-      console.log 'here'
       image.src = window.URL.createObjectURL this.response
     xhr.send()
 
@@ -17,13 +16,11 @@ module.exports = app.directive 'ffImageReplacer', ->
 
   scope:
     content: '=ffImageReplacer'
-  link: ($scope, $element, $attrs) ->
-    console.log(1)
-    console.log $scope
-
-    unregister = $scope.$watch 'content', ->
-      console.log(2)
-      console.log $scope
-      replace($element)
+  link:
+    pre: () ->
+      console.log 'before render'
+    post: ($scope, $element, $attrs) ->
+      $scope.$watch 'content', ->
+        replace($element)
 
 
