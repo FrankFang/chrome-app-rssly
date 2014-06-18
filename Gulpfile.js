@@ -73,7 +73,11 @@ gulp.task('watch', function () {
     ], ['copy'])
     gulp.watch([APP + '**/*.{js,coffee}'], ['browserify'])
     gulp.watch([APP + '**/*.less'], ['less'])
-    gulp.watch([APP + '*.html'], ['fileinclude'])
+    gulp.watch([
+            APP + '*.html',
+            APP + 'assets/svg/*'
+
+    ], ['fileinclude'])
 });
 
 //gulp.task('copyNewer', function () {

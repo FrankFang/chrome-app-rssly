@@ -15,8 +15,11 @@
     <body>
         <div class="page">
             <section class="channelList" ng-controller="ctrlFeeds">
-                <h1 class="upper">Rssly</h1>
+                <h1 class="upper">
+                    Rssly
+                </h1>
                 <ol>
+
                     <li ng-repeat="item in list track by $index">
                         <my-feed source="item" ng-click="openFeed($index)"></my-feed>
                     </li>
@@ -37,7 +40,10 @@
                     </div>
                 </footer>
             </section>
-            <section class="entryList" ng-controller="ctrlArticles">
+            <section class="articleList" ng-controller="ctrlArticles">
+                <div class="loading" ng-show="status == 'loading'">
+                    @@include('assets/svg/loading-cylon.svg')
+                </div>
                 <ol>
                     <li ng-repeat="article in articles track by $index">
                         <ff-article ng-click="openArticle($index)"></ff-article>

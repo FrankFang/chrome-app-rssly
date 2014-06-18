@@ -13,6 +13,7 @@ module.exports = app.filter 'ffReplaceImages', ($sce)->
         image.remove
       else
         image.setAttribute 'data-src',image.src
-        image.src = '#'
+        image.src = 'assets/svg/loading-spinning-bubbles.svg'
     input = wrapper.innerHTML
+    console.log input
     $sce.trustAsHtml input
