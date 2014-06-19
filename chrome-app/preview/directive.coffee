@@ -19,6 +19,8 @@ module.exports = app.directive 'ffArticlePreview', ($timeout, $parse, urlUtils, 
           xhr.open 'GET', src, true
           xhr.responseType = 'blob'
           #image.src = 'assets/svg/loading-spinning-bubbles.svg'
+          image.style.display = 'none'
           xhr.onload = () ->
             image.src = window.URL.createObjectURL this.response
+            image.style.display = 'inline-block'
           xhr.send()
