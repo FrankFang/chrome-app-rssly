@@ -14,6 +14,7 @@ module.exports = app.directive(
                 pre: function ($scope) {
                     // icon is a native object for now.
                     $scope.item.icon = ''
+                    $scope.item.active = false
                 },
                 post: function ($scope, $element, $attrs) {
 
@@ -21,11 +22,11 @@ module.exports = app.directive(
 
                     $http.get('https://ajax.googleapis.com/ajax/services/feed/load?v=2.0&num=0&q=' + encodeURIComponent(url))
                         .success(function (data) {
-                            $scope.item.status = 'success'
+                            $scope.item.loadFail = false
                             $scope.item.title = data.responseData.feed.title
                         })
                         .error(function () {
-                            $scope.item.status = 'error'
+                            $scope.item.loadFail = true
                         })
 
 
