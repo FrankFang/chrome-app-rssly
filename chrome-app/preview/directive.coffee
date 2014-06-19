@@ -15,7 +15,9 @@ module.exports = app.directive 'ffArticlePreview', ($timeout, $parse, urlUtils, 
         images.forEach (image) ->
           xhr = new XMLHttpRequest()
           src = image.getAttribute 'src'
-          return if (src.indexOf('javascript') is 0)
+          if src.indexOf('javascript') is 0
+            image.remove()
+            return
           xhr.open 'GET', src, true
           xhr.responseType = 'blob'
           #image.src = 'assets/svg/loading-spinning-bubbles.svg'
