@@ -1,9 +1,24 @@
 app = require('../app')
 
 module.exports = app.directive 'ffArticlePreview', ($timeout, $parse, urlUtils, $http, $sce) ->
-  restrict: 'E'
+  restrict: 'AE'
   scope:
     content: '=content'
   link:
     post: ($scope, $element, $attrs) ->
-      console.log $scope.content
+      $scope.$watch 'content', (value)->
+        html = $sce.trustAsHtml value
+        $element.html(html)
+        $element.parent()[0].scrollTop = 0
+        images = $element.find 'img'
+        images = Array.prototype.slice.call images, 0
+        images.forEach (image) ->
+          xhr = new XMLHttpRequest()
+          src = image.getAttribute 'src'
+          return if (src.indexOf('javascript') is 0)
+          xhr.open 'GET', src, true
+          xhr.responseType = 'blob'
+          #image.src = 'assets/svg/loading-spinning-bubbles.svg'
+          xhr.onload = () ->
+            image.src = window.URL.createObjectURL this.response
+          xhr.send()
