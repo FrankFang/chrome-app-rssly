@@ -2,7 +2,7 @@
 var app = require('../app')
 
 module.exports = app.directive(
-    'ffArticle',
+    'ffArticleSummary',
     function ($timeout, $parse, urlUtils, $http, $sce) {
         return {
             restrict: 'E',

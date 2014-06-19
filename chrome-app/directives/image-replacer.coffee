@@ -17,8 +17,6 @@ module.exports = app.directive 'ffImageReplacer', ->
   scope:
     content: '=ffImageReplacer'
   link:
-    pre: () ->
-      console.log 'before render'
     post: ($scope, $element, $attrs) ->
       $scope.$watch 'content', ->
         replace($element)

@@ -11,6 +11,10 @@ module.exports = app.directive(
             },
             templateUrl: 'feeds/template.html',
             link: {
+                pre: function ($scope) {
+                    // icon is a native object for now.
+                    $scope.item.icon = ''
+                },
                 post: function ($scope, $element, $attrs) {
 
                     var url = $scope.item.url

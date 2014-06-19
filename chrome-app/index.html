@@ -46,7 +46,7 @@
                 </div>
                 <ol>
                     <li ng-repeat="article in articles track by $index">
-                        <ff-article ng-click="openArticle($index)"></ff-article>
+                        <ff-article-summary ng-click="openArticle($index)"></ff-article-summary>
                     </li>
                 </ol>
             </section>
@@ -55,8 +55,7 @@
                     <time>{{publishedDate}}</time>
                     <span class="author">{{author}}</span>
                 </aside>
-                <article ng-bind-html="content | ffReplaceImages" ff-image-replacer="content">
-                </article>
+                <ff-article-preview></ff-article-preview>
             </section>
         </div>
 

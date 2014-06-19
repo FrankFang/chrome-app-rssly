@@ -11,6 +11,7 @@ require './articles/controller'
 require './articles/directive'
 
 require './preview/controller'
+require './preview/directive'
 
 require './directives/focusable'
 require './directives/draggable'

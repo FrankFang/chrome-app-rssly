@@ -13,7 +13,6 @@ module.exports = app.directive(
                     })
                     .on('dragend', function (e) {
                         this.classList.remove('drag')
-                        console.log(e)
                     })
             }
         }
