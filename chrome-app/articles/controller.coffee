@@ -7,6 +7,7 @@ app.controller 'ctrlArticles', ($scope, feedService, $rootScope) ->
   $scope.articles = []
   $scope.status = 'none'
   $scope.$on 'openFeed', (event, data) ->
+    $scope.articles = []
     url = data.url
     $scope.status = 'loading'
     feedService.get(url).success (response) ->
