@@ -6,38 +6,18 @@ require('../services/feed')
 app.controller 'ctrlArticles', ($scope, feedService, $rootScope) ->
   $scope.articles = []
   $scope.status = 'none'
-  $scope.$on('openFeed', (event, data) ->
-
-    $scope.articles = [
-      {
-        "title": "Git远程操作详解"
-        "link": "http://www.ruanyifeng.com/blog/2014/06/git_remote.html"
-        "author": "阮一峰"
-        "publishedDate": "Wed, 11 Jun 2014 22:22:22 -0700"
-        "contentSnippet": "Git是目前最流行的版本管理系统，学会Git几乎成了开发者的必备技能。..."
-        "content": "<div>ccc</div>"
-        "categories": ["Developer"]
-      }
-      {
-        "title": "Git远程操作详解"
-        "link": "http://www.ruanyifeng.com/blog/2014/06/git_remote.html"
-        "author": "阮一峰"
-        "publishedDate": "Wed, 11 Jun 2014 22:22:22 -0700"
-        "contentSnippet": "Git是目前最流行的版本管理系统，学会Git几乎成了开发者的必备技能。..."
-        "content": "<div>ccc</div>"
-        "categories": ["Developer"]
-      }
-    ]
-
-    return
-
+  $scope.$on 'openFeed', (event, data) ->
     url = data.url
     $scope.status = 'loading'
     feedService.get(url).success (response) ->
       list = response?.responseData?.feed?.entries
       $scope.articles = list if list
       $scope.status = 'success'
-  )
 
   $scope.openArticle = (index)->
+    if $scope.selectedIndex isnt undefined
+      $scope.articles[$scope.selectedIndex].active = false
+    $scope.selectedIndex = index
+    $scope.articles[index].active = true
     $rootScope.$broadcast 'openArticle', $scope.articles[index]
+
