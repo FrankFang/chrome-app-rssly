@@ -23,7 +23,7 @@ app.controller 'ctrlFeeds', ($scope, $rootScope, $http, $timeout, urlUtils, $sce
     $scope.showPoptip = false
 
   $scope.openFeed = (index) ->
-    if $scope.selectedIndex is not undefined
+    if $scope.selectedIndex isnt undefined
       $scope.list[$scope.selectedIndex].active = false
     $scope.selectedIndex = index
     $scope.list[index].active = true
