@@ -65,7 +65,8 @@ body {
             font-size: 1rem;
             line-height: 1.6;
             background-color: white;
-            padding: 1rem 2rem;
+            padding: 0 2rem 1rem;
+            > :first-child { margin-top: 0; }
             a { color: #4183c4; }
 
             h1, h2, h3, h4, h5, h6 { margin: 20px 0 10px; padding: 0; font-weight: bold; cursor: text; position: relative; }
@@ -128,7 +129,7 @@ body {
             table tr th :last-child, table tr td :last-child {
                 margin-bottom: 0; }
 
-            img { max-width: 100%; }
+            img { max-width: 100%; display: block !important; }
             p > img,
             p > a > img { display: block; margin-left: auto; margin-right: auto; }
 

@@ -20,9 +20,12 @@ module.exports = app.directive 'ffArticlePreview', ($timeout, $parse, urlUtils, 
             return
           xhr.open 'GET', src, true
           xhr.responseType = 'blob'
-          #image.src = 'assets/svg/loading-spinning-bubbles.svg'
           image.style.display = 'none'
           xhr.onload = () ->
             image.src = window.URL.createObjectURL this.response
             image.style.display = 'inline-block'
           xhr.send()
+        anchors = $element.find 'a'
+        anchors = Array.prototype.slice.call anchors, 0
+        anchors.forEach (anchor) ->
+          anchor.setAttribute('target', '_blank')
