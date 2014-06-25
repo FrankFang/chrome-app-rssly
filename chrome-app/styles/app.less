@@ -48,8 +48,8 @@ body {
 }
 
 .articleList {
-    .loading {
-        text-align: center;
+    ol { overflow-y: auto; }
+    .loading { position: absolute; text-align: center;
         svg { fill: @color; vertical-align: top; width: 100%; height: 1px; }
     }
 }

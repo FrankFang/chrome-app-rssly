@@ -30,7 +30,7 @@ app.controller 'ctrlArticles', ($scope, feedService, $rootScope, $q) ->
                 temp = {}
                 temp[key] = $scope.articles
                 chrome.storage.local.set temp
-#                $scope.status = 'success'
+                $scope.status = 'success'
 
     $scope.openArticle = (index)->
 

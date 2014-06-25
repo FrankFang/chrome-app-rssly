@@ -55,7 +55,7 @@ gulp.task('less', function () {
             APP + '**/*.less',
             APP + '**/_*.less'
     ])
-        .pipe(less())
+        .pipe(less({sourceMap: true}))
         .pipe(gulp.dest(DIST))
 });
 
