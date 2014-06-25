@@ -95,3 +95,20 @@ images.forEach(function (image) {
 //#
 //#    return
 
+$window = angular.element window
+records = []
+$window.on 'dragstart', (e) ->
+    console.log 'dragstart'
+$window.on 'dragenter', (e) ->
+    console.log 'dragenter'
+records.push e.target
+$window.on 'dragleave', (e) ->
+    console.log 'dragleave'
+records = _.without(records, e.target)
+#      if records.length is 0
+#        console.log 'e'
+angular.element(document.body).on 'drop', (e) ->
+    console.log 'drop'
+
+$window.on 'dragend', (e) ->
+    console.log 'drag'

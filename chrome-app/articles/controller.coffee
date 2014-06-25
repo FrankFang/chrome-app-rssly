@@ -2,15 +2,14 @@
 
 app = require('../app')
 require('../services/feed')
-
-app.controller 'ctrlArticles', ($scope, feedService, $rootScope) ->
+app.controller 'ctrlArticles', ($scope, feedService, $rootScope, $q) ->
   $scope.articles = []
   $scope.status = 'none'
   $scope.$on 'openFeed', (event, data) ->
     $scope.articles = []
     url = data.url
     $scope.status = 'loading'
-    feedService.get(url).success (response) ->
+    feedService.getExclusively(url).success (response, b, c) ->
       list = response?.responseData?.feed?.entries
       $scope.articles = list if list
       $scope.status = 'success'

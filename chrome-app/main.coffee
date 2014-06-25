@@ -15,4 +15,5 @@ require './preview/directive'
 
 require './directives/focusable'
 require './directives/draggable'
+require './directives/dragout'
 
