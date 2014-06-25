@@ -18,7 +18,9 @@
         "storage",
         "http://*/",
         "https://*/",
-        "contextMenus"
+        "contextMenus",
+        "unlimitedStorage",
+        "notifications"
     ],
     "sandbox": {
         "pages": ["sandbox.html"]

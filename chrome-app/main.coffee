@@ -1,6 +1,6 @@
 # Created by frank on 14-5-19.
 window.onerror = () ->
-  document.body.style.display = 'none'
+    document.body.style.display = 'none'
 
 require './app'
 
