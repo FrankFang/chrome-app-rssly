@@ -112,3 +112,26 @@ angular.element(document.body).on 'drop', (e) ->
 
 $window.on 'dragend', (e) ->
     console.log 'drag'
+
+//omplParser = require 'opml-to-json'
+//console.log omplParser
+//
+//accepts = [
+//    {
+//        extensions: ['opml']
+//    }
+//]
+//
+//chrome.fileSystem.chooseEntry {
+//    type: 'openFile'
+//    accepts: accepts
+//}, (fileEntry)->
+//    fileEntry.file (file) ->
+//reader = new FileReader()
+//reader.onload = (e) ->
+//    result = e.target.result
+//omplParser result,(error, json)->
+//    console.log json
+//
+//reader.readAsText file
+
