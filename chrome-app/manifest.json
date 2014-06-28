@@ -20,7 +20,10 @@
         "https://*/",
         "contextMenus",
         "unlimitedStorage",
-        "notifications"
+        "notifications",
+        {
+            "fileSystem": ["write", "retainEntries", "directory"]
+        }
     ],
     "sandbox": {
         "pages": ["sandbox.html"]

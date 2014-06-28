@@ -7,8 +7,6 @@ app.controller 'ctrlFeeds', ($scope, $rootScope, $http, $timeout, urlUtils, $sce
 
     chrome.storage.local.get 'feeds', (response) ->
         $scope.list = response.feeds or []
-        if $scope.list.length is 0
-            $scope.list.push({url: 'http://www.ruanyifeng.com/blog/atom.xml'})
 
     $scope.focusAdd = false
     $scope.newFeed = ''
