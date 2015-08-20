@@ -18,4 +18,4 @@ yet another rss reader
 
 
 
-
+注：需翻墙才能运行，因为使用了 Google API。
